@@ -19,26 +19,24 @@ export default function ReadingProgress() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] h-7 pointer-events-none">
-      {/* Bar line */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-transparent">
+      {/* Bar line — scaleX is GPU-accelerated */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-transparent origin-left">
         <div
-          className="h-full bg-gradient-to-r from-[#8B5E3C] via-[#C4926A] to-[#C4926A]"
+          className="h-full w-full bg-gradient-to-r from-[#8B5E3C] via-[#C4926A] to-[#C4926A] origin-left"
           style={{
-            width: `${progress}%`,
-            transform: "translateZ(0)",
-            willChange: "width",
-            transition: "width 80ms linear",
+            transform: `scaleX(${progress / 100})`,
+            willChange: "transform",
+            transition: "transform 80ms linear",
           }}
         />
       </div>
-      {/* Saturn floating below the bar tip */}
+      {/* Saturn — translateX only, GPU-accelerated */}
       <div
-        className="absolute top-[3px]"
+        className="absolute top-[3px] left-0"
         style={{
-          left: `${progress}%`,
-          transform: "translateX(-50%) translateZ(0)",
-          willChange: "left",
-          transition: "left 80ms linear",
+          transform: `translateX(calc(${progress}vw - 11px))`,
+          willChange: "transform",
+          transition: "transform 80ms linear",
           filter: "drop-shadow(0 0 6px #C4926A)",
         }}
       >
