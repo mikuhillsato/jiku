@@ -122,6 +122,50 @@ export default function AstrologyPage() {
           </div>
         </section>
 
+        {/* DSC & MC */}
+        <section className="mb-20">
+          <div className="flex items-center gap-6 mb-10">
+            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <span className="font-display italic text-[#B8AEED] text-sm">angles</span>
+            <div className="flex-1 h-px bg-[#1A1F35]" />
+          </div>
+
+          <h2 className="font-display text-4xl font-light mb-4 text-center">
+            もう二つのアングル
+          </h2>
+          <p className="text-sm text-[#8888AA] text-center mb-10 tracking-wider">
+            アセンダント（AC）と対をなす二つの軸。チャート読みの解像度を上げる。
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
+            {[
+              {
+                symbol: "DC",
+                name: "ディセンダント",
+                en: "Descendant",
+                desc: "ACの真向かい、第7ハウスのカスプ。「自分と対になる他者」を示す軸。パートナーシップ・結婚・重要な他者に求めるものを表す。自分の中で意識しにくい資質を、他者の中に見出す傾向がある。",
+              },
+              {
+                symbol: "MC",
+                name: "MC（天頂）",
+                en: "Midheaven",
+                desc: "第10ハウスのカスプ。社会的な方向性・キャリア・公の自己像を示す軸。「世の中でどう生きるか」「何者として認識されたいか」という問いへの答え。人生の中盤以降に強く現れてくることが多い。",
+              },
+            ].map((item) => (
+              <div key={item.name} className="bg-[#0E1020] p-8">
+                <div className="flex items-baseline gap-4 mb-4">
+                  <p className="font-display text-4xl text-[#B8AEED] font-light">{item.symbol}</p>
+                  <div>
+                    <p className="text-xs tracking-[0.2em] text-[#8888AA] uppercase">{item.en}</p>
+                    <h3 className="font-display text-2xl font-light">{item.name}</h3>
+                  </div>
+                </div>
+                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Sub-pages */}
         <section>
           <h2 className="font-display text-3xl font-light mb-8">さらに深く学ぶ</h2>

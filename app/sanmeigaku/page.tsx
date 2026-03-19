@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SanmeiBodyMap from "@/components/SanmeiBodyMap";
 
 export const metadata: Metadata = {
   title: "算命学",
@@ -57,8 +58,9 @@ export default function SanmeigakuPage() {
                 陰占が先天的な宿命の骨格を示し、陽占の宿命星・位相法が具体的な気質と人間関係のパターンを示す。
               </p>
             </div>
-            <div>
-              <div className="bg-[#1A1F35] p-8 mb-4">
+            <div className="space-y-4">
+              <SanmeiBodyMap />
+              <div className="bg-[#1A1F35] p-8">
                 <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-4 uppercase">Structure</p>
                 <div className="space-y-3">
                   {[
