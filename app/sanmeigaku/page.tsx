@@ -22,13 +22,18 @@ const tenGods = [
 export default function SanmeigakuPage() {
   return (
     <>
-      <div className="border-b border-[#E0DDD6]">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#888888] mb-4 uppercase">04 — Sanmeigaku</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#111111] mb-6">
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            Sanmeigaku — MyJiku
+          </span>
+        </div>
+        <div className="px-12 py-16">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">04 — Sanmeigaku</p>
+          <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
             算命学
           </h1>
-          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-6">
             中国の陰陽五行思想をベースに、日本で独自に発展した命理学。
             天干・地支・守護神の概念を組み合わせ、その人の先天的な気質と後天的な運の流れを立体的に読み解く。
             四柱推命と似て非なる、日本独自の占術体系。
@@ -82,10 +87,9 @@ export default function SanmeigakuPage() {
 
         {/* Difference from Shichusuimei */}
         <section className="mb-20">
-          <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
-            <span className="font-display italic text-[#888888] text-sm">vs. 四柱推命</span>
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">vs. 四柱推命</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
             <div className="bg-[#F4F4F2] p-8">

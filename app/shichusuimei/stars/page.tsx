@@ -103,17 +103,22 @@ const categories = [
 export default function StarsPage() {
   return (
     <>
-      <div className="border-b border-[#E0DDD6]">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#888888] tracking-wider mb-4">
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            Stems & Stars — Shichusuimei
+          </span>
+        </div>
+        <div className="px-12 py-12">
+          <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
             <Link href="/shichusuimei" className="hover:text-[#111111] transition-colors">四柱推命</Link>
             <span>/</span>
             <span>十干・十二支と星の意味</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#111111] mb-4">
+          <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(36px,4.5vw,68px)" }}>
             十干・通変星
           </h1>
-          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-5">
             四柱推命の解読には、十干（天干）の性質と、
             日主との関係から生まれる「通変星（つうへんせい）」の理解が欠かせない。
             10の通変星が命式のどこにどのように現れるかで、才能・性格・仕事運が浮かび上がる。

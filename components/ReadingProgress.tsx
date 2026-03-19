@@ -32,15 +32,15 @@ export default function ReadingProgress() {
       </div>
       {/* Saturn — translateX only, GPU-accelerated */}
       <div
-        className="absolute top-[3px] left-0"
+        className="absolute top-0 left-0"
         style={{
-          transform: `translateX(calc(${progress}vw - 11px))`,
+          transform: `translateX(calc(${progress}vw - 11px)) translateY(-9px)`,
           willChange: "transform",
           transition: "transform 80ms linear",
           filter: "drop-shadow(0 0 6px #C4926A)",
         }}
       >
-        <span className="text-[22px] leading-none star-tip block">🪐</span>
+        <span className="text-[22px] leading-none block">🪐</span>
       </div>
     </div>
   );

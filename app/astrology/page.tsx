@@ -26,13 +26,18 @@ export default function AstrologyPage() {
   return (
     <>
       {/* Page header */}
-      <div className="border-b border-[#E0DDD6]">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#888888] mb-4 uppercase">01 — Western Astrology</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#111111] mb-6">
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            Western Astrology — MyJiku
+          </span>
+        </div>
+        <div className="px-12 py-16">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">01 — Western Astrology</p>
+          <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
             西洋占星術
           </h1>
-          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-6">
             紀元前から続く西洋占星術は、惑星の位置と運動をもとに人間の心理・才能・運命のパターンを読み解く体系。
             「生まれた瞬間の空の配置」は、あなたという人間の設計図だ。
           </p>
@@ -81,10 +86,9 @@ export default function AstrologyPage() {
 
         {/* Three main axes */}
         <section className="mb-20">
-          <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
-            <span className="font-display italic text-[#888888] text-sm">three luminaries</span>
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">three luminaries</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
 
           <h2 className="font-display text-4xl font-light mb-10 text-center">
@@ -124,10 +128,9 @@ export default function AstrologyPage() {
 
         {/* DSC & MC */}
         <section className="mb-20">
-          <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
-            <span className="font-display italic text-[#888888] text-sm">angles</span>
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">angles</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
 
           <h2 className="font-display text-4xl font-light mb-4 text-center">
@@ -168,19 +171,28 @@ export default function AstrologyPage() {
 
         {/* Sub-pages */}
         <section>
-          <h2 className="font-display text-3xl font-light mb-8">さらに深く学ぶ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
-            {subPages.map((page) => (
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+          </div>
+          <div>
+            {subPages.map((page, i) => (
               <Link
                 key={page.href}
                 href={page.href}
-                className="group bg-[#F4F4F2] p-8 hover:bg-[#EAEAE6] transition-colors duration-300 block"
+                className="group grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0"
+                style={{ gridTemplateColumns: "72px 220px 1fr" }}
               >
-                <p className="text-xs tracking-[0.2em] text-[#888888] mb-2 uppercase">{page.titleEn}</p>
-                <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#111111] transition-colors">
-                  {page.title} <span className="text-[#888888]">→</span>
-                </h3>
-                <p className="text-sm text-[#555555] leading-loose tracking-wider">{page.desc}</p>
+                <div className="border-r border-[#E8E8E4] flex items-start pt-6 pl-5">
+                  <span className="font-display text-[12px] tracking-[0.15em] text-[#CCC]">0{i + 1} —</span>
+                </div>
+                <div className="border-r border-[#E8E8E4] flex flex-col justify-center px-6 py-6">
+                  <p className="text-[8px] tracking-[0.35em] uppercase text-[#AAA] mb-1">{page.titleEn}</p>
+                  <h3 className="font-display text-[20px] font-light group-hover:opacity-60 transition-opacity">{page.title} <span className="text-[#888]">→</span></h3>
+                </div>
+                <div className="flex items-center px-8 py-6">
+                  <p className="text-[11px] leading-loose tracking-wider text-[#666666]">{page.desc}</p>
+                </div>
               </Link>
             ))}
           </div>

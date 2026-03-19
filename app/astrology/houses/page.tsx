@@ -96,17 +96,22 @@ const houses = [
 export default function HousesPage() {
   return (
     <>
-      <div className="border-b border-[#E0DDD6]">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#888888] tracking-wider mb-4">
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            Houses — Western Astrology
+          </span>
+        </div>
+        <div className="px-12 py-12">
+          <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
             <Link href="/astrology" className="hover:text-[#111111] transition-colors">西洋占星術</Link>
             <span>/</span>
             <span>ハウスの意味</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#111111] mb-4">
+          <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(36px,4.5vw,68px)" }}>
             ハウスの意味
           </h1>
-          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-5">
             ホロスコープは12の「ハウス（室）」に分割される。それぞれのハウスは人生の特定の領域を象徴し、
             どの惑星がどのハウスに入っているかで、その人がどの領域に強いエネルギーを持つかが分かる。
           </p>

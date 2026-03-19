@@ -10,15 +10,20 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <div className="border-b border-[#E0DDD6]">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            About — MyJiku
+          </span>
+        </div>
+        <div className="px-12 py-16">
           <AnimateIn>
-            <p className="text-xs tracking-[0.3em] text-[#888888] mb-4 uppercase">About</p>
-            <h1 className="font-display text-5xl md:text-7xl font-light text-[#111111] mb-6">
+            <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">About</p>
+            <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
               占術は、<br />
-              <em className="not-italic text-[#111111]">自己理解</em>のツール。
+              <em className="not-italic">自己理解</em>のツール。
             </h1>
-            <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
+            <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-6">
               MyJikuは「占い好き」のためのサイトではない。
               自分の人生を自分で設計したい人のための、占術という名の地図帳だ。
             </p>
@@ -76,10 +81,9 @@ export default function AboutPage() {
 
         {/* For whom */}
         <section className="mb-24">
-          <div className="flex items-center gap-6 mb-12">
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
-            <span className="font-display italic text-[#888888] text-sm">for whom</span>
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-12">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">for whom</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
 
           <AnimateIn>

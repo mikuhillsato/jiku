@@ -46,13 +46,18 @@ function HowToCalculate() {
 export default function NumerologyPage() {
   return (
     <>
-      <div className="border-b border-[#E0DDD6]">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#888888] mb-4 uppercase">03 — Numerology</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#111111] mb-6">
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            Numerology — MyJiku
+          </span>
+        </div>
+        <div className="px-12 py-16">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">03 — Numerology</p>
+          <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
             数秘術
           </h1>
-          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-6">
             ピタゴラスに遡る数の哲学をルーツに持つ、数秘術（ニューメロロジー）。
             生年月日と名前を数字に還元することで、人生のテーマ・使命・魂の欲求を読み解く。
             シンプルな計算の先に、驚くほど核心を突く自己像が浮かび上がる。
@@ -86,10 +91,9 @@ export default function NumerologyPage() {
 
         {/* Key numbers */}
         <section className="mb-20">
-          <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
-            <span className="font-display italic text-[#888888] text-sm">core numbers</span>
-            <div className="flex-1 h-px bg-[#EAEAE6]" />
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">core numbers</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
           <h2 className="font-display text-4xl font-light mb-10 text-center">主要な数字の種類</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
