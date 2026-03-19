@@ -31,7 +31,7 @@ export default function ReadingProgress() {
         >
           {/* Star body */}
           <div className="relative">
-            <span className="text-[10px] leading-none star-tip">⭐</span>
+            <span className="text-[14px] leading-none star-tip">🪐</span>
             {/* Tail glow */}
             <div className="absolute right-full top-1/2 -translate-y-1/2 w-6 h-[2px] bg-gradient-to-l from-[#C4926A] to-transparent opacity-80" />
           </div>
