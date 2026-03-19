@@ -128,7 +128,7 @@ export default function StarsPage() {
           <p className="text-sm text-[#8A7E75] mb-8 tracking-wider">Ten Heavenly Stems</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
             {stems.map((s) => (
-              <div key={s.stem} className="bg-[#F5F1EA] p-6 flex gap-6">
+              <div key={s.stem} className="bg-[#EFF0EB] p-6 flex gap-6">
                 <div className="text-center shrink-0 w-16">
                   <p className="font-display text-4xl text-[#C4926A] font-light">{s.stem}</p>
                   <p className="text-xs text-[#8A7E75] mt-1 tracking-wider">{s.reading}</p>
@@ -155,7 +155,7 @@ export default function StarsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-[#EAE4DC] mb-12">
             {categories.map((cat) => (
-              <div key={cat.name} className="bg-[#F5F1EA] p-5 text-center">
+              <div key={cat.name} className="bg-[#EFF0EB] p-5 text-center">
                 <p className="text-xs text-[#8B5E3C] tracking-wider mb-2">{cat.stars.join(" / ")}</p>
                 <p className="font-display text-sm font-light leading-snug mb-2">{cat.name}</p>
                 <p className="text-xs text-[#8A7E75] tracking-wider">{cat.desc}</p>
@@ -168,7 +168,7 @@ export default function StarsPage() {
         <section>
           <div className="space-y-px bg-[#EAE4DC]">
             {stars.map((star) => (
-              <div key={star.name} className="bg-[#F5F1EA] p-8">
+              <div key={star.name} className="bg-[#EFF0EB] p-8">
                 <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-6">
                   <div>
                     <p className="font-display text-3xl font-light text-[#1A1714] mb-1">{star.name}</p>

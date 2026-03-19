@@ -112,7 +112,7 @@ export default function AstrologyPage() {
                 desc: "他者への第一印象・人生への入り口・外に見せるペルソナ。「あなたはこう見える」。",
               },
             ].map((item) => (
-              <div key={item.name} className="bg-[#F5F1EA] p-8 text-center">
+              <div key={item.name} className="bg-[#EFF0EB] p-8 text-center">
                 <p className="font-display text-5xl text-[#C4926A] mb-4">{item.symbol}</p>
                 <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-1 uppercase">{item.en}</p>
                 <h3 className="font-display text-2xl font-light mb-4">{item.name}</h3>
@@ -130,7 +130,7 @@ export default function AstrologyPage() {
               <Link
                 key={page.href}
                 href={page.href}
-                className="group bg-[#F5F1EA] p-8 hover:bg-[#EAE4DC] transition-colors duration-300 block"
+                className="group bg-[#EFF0EB] p-8 hover:bg-[#EAE4DC] transition-colors duration-300 block"
               >
                 <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">{page.titleEn}</p>
                 <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#8B5E3C] transition-colors">

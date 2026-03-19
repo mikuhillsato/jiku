@@ -122,7 +122,7 @@ export default function PlanetsPage() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="space-y-px bg-[#EAE4DC]">
           {planets.map((planet) => (
-            <div key={planet.name} className="bg-[#F5F1EA] p-8 md:p-10">
+            <div key={planet.name} className="bg-[#EFF0EB] p-8 md:p-10">
               <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8">
                 {/* Symbol + name */}
                 <div className="text-center md:text-left">

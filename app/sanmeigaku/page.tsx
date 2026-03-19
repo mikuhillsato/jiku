@@ -86,7 +86,7 @@ export default function SanmeigakuPage() {
             <div className="flex-1 h-px bg-[#EAE4DC]" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
-            <div className="bg-[#F5F1EA] p-8">
+            <div className="bg-[#EFF0EB] p-8">
               <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">算命学</p>
               <h3 className="font-display text-2xl font-light mb-4">Sanmeigaku</h3>
               <ul className="space-y-2">
@@ -104,7 +104,7 @@ export default function SanmeigakuPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-[#F5F1EA] p-8">
+            <div className="bg-[#EFF0EB] p-8">
               <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">四柱推命</p>
               <h3 className="font-display text-2xl font-light mb-4">Four Pillars</h3>
               <ul className="space-y-2">
@@ -133,7 +133,7 @@ export default function SanmeigakuPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
             {tenGods.map((god) => (
-              <div key={god.name} className="bg-[#F5F1EA] p-8">
+              <div key={god.name} className="bg-[#EFF0EB] p-8">
                 <h3 className="font-display text-2xl font-light mb-1">{god.name}</h3>
                 <p className="text-xs text-[#8B5E3C] tracking-wider mb-3">{god.keyword}</p>
                 <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{god.desc}</p>

@@ -64,7 +64,7 @@ export default function AboutPage() {
                     a: "それぞれ異なる切り口で「あなた」を照らす。西洋占星術が心理的な地図なら、四柱推命は時間軸の地図。重なる部分が、その人の本質的なパターンだ。",
                   },
                 ].map((item) => (
-                  <div key={item.q} className="bg-[#F5F1EA] p-6">
+                  <div key={item.q} className="bg-[#EFF0EB] p-6">
                     <p className="text-xs text-[#8B5E3C] tracking-wider mb-2">Q. {item.q}</p>
                     <p className="text-sm text-[#3D3630] leading-loose tracking-wider">A. {item.a}</p>
                   </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
               },
             ].map((item) => (
               <AnimateIn key={item.icon} delay={parseInt(item.icon) * 100}>
-                <div className="bg-[#F5F1EA] p-8 h-full">
+                <div className="bg-[#EFF0EB] p-8 h-full">
                   <span className="font-display text-4xl text-[#D6C5B0] font-light block mb-4">
                     {item.icon}
                   </span>
@@ -122,7 +122,7 @@ export default function AboutPage() {
         {/* Vision */}
         <section>
           <AnimateIn>
-            <div className="bg-[#1A1714] text-[#F5F1EA] p-12 md:p-16">
+            <div className="bg-[#1A1714] text-[#EFF0EB] p-12 md:p-16">
               <p className="font-display italic text-[#C4926A] text-lg mb-6">vision</p>
               <h2 className="font-display text-4xl font-light leading-snug mb-8">
                 占術を「ライフデザイン」の<br />

@@ -60,7 +60,7 @@ export default function Home() {
           <div className="mt-10 flex gap-4">
             <Link
               href="/astrology"
-              className="inline-block px-8 py-3 bg-[#1A1714] text-[#F5F1EA] text-xs tracking-[0.2em] hover:bg-[#8B5E3C] transition-colors duration-300"
+              className="inline-block px-8 py-3 bg-[#1A1714] text-[#EFF0EB] text-xs tracking-[0.2em] hover:bg-[#8B5E3C] transition-colors duration-300"
             >
               探索する
             </Link>
@@ -88,7 +88,7 @@ export default function Home() {
             <Link
               key={s.href}
               href={s.href}
-              className="group bg-[#F5F1EA] p-10 hover:bg-[#EAE4DC] transition-colors duration-300 block"
+              className="group bg-[#EFF0EB] p-10 hover:bg-[#EAE4DC] transition-colors duration-300 block"
             >
               <div className="flex justify-between items-start mb-6">
                 <span className="font-display text-5xl text-[#D6C5B0] group-hover:text-[#C4926A] transition-colors duration-300 font-light">
@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy section */}
-      <section className="bg-[#1A1714] text-[#F5F1EA] py-24">
+      <section className="bg-[#1A1714] text-[#EFF0EB] py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center">
             <p className="font-display italic text-[#C4926A] text-lg mb-6">philosophy</p>

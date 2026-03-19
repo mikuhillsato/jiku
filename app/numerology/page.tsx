@@ -23,7 +23,7 @@ const lifePathMeanings = [
 
 function HowToCalculate() {
   return (
-    <div className="bg-[#1A1714] text-[#F5F1EA] p-8 md:p-12">
+    <div className="bg-[#1A1714] text-[#EFF0EB] p-8 md:p-12">
       <p className="text-xs tracking-[0.2em] text-[#C4926A] mb-4 uppercase">How to Calculate</p>
       <h3 className="font-display text-3xl font-light mb-6">ライフパスナンバーの計算法</h3>
       <p className="text-sm text-[#8A7E75] leading-loose tracking-wider mb-8">
@@ -32,9 +32,9 @@ function HowToCalculate() {
       <div className="bg-[#111] p-6 font-mono text-sm text-[#C4926A] leading-loose">
         <p className="text-[#8A7E75] text-xs mb-2">例：1990年3月15日生まれの場合</p>
         <p>1 + 9 + 9 + 0 + 0 + 3 + 1 + 5 = 28</p>
-        <p>2 + 8 = <span className="text-[#F5F1EA] font-bold">10</span></p>
-        <p>1 + 0 = <span className="text-[#F5F1EA] font-bold">1</span></p>
-        <p className="mt-4 text-[#F5F1EA]">→ ライフパスナンバーは <span className="text-[#C4926A]">1</span></p>
+        <p>2 + 8 = <span className="text-[#EFF0EB] font-bold">10</span></p>
+        <p>1 + 0 = <span className="text-[#EFF0EB] font-bold">1</span></p>
+        <p className="mt-4 text-[#EFF0EB]">→ ライフパスナンバーは <span className="text-[#C4926A]">1</span></p>
       </div>
       <p className="text-xs text-[#8A7E75] tracking-wider mt-4">
         ※ 途中で11・22・33が出た場合はそのまま保持する（マスターナンバー）
@@ -119,7 +119,7 @@ export default function NumerologyPage() {
                 desc: "名前の子音から計算し、他者があなたを「どう見るか・どう感じるか」という外側への印象を示す。ライフパスナンバーとの違いがペルソナの厚みを教えてくれる。",
               },
             ].map((item) => (
-              <div key={item.name} className="bg-[#F5F1EA] p-8">
+              <div key={item.name} className="bg-[#EFF0EB] p-8">
                 <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-1 uppercase">{item.en}</p>
                 <h3 className="font-display text-2xl font-light mb-2">{item.name}</h3>
                 <p className="text-xs text-[#8B5E3C] tracking-wider mb-4">導出元：{item.source}</p>
@@ -135,7 +135,7 @@ export default function NumerologyPage() {
           <p className="text-sm text-[#8A7E75] mb-10 tracking-wider">1〜9、そしてマスターナンバー11・22・33</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EAE4DC]">
             {lifePathMeanings.map((item) => (
-              <div key={item.number} className="bg-[#F5F1EA] p-8">
+              <div key={item.number} className="bg-[#EFF0EB] p-8">
                 <p className="font-display text-6xl text-[#D6C5B0] font-light mb-3 leading-none">
                   {item.number}
                 </p>

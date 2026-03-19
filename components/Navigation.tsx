@@ -32,7 +32,7 @@ export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="relative z-50 border-b border-[#EAE4DC] bg-[#F5F1EA]/90 backdrop-blur-sm">
+    <header className="relative z-50 border-b border-[#EAE4DC] bg-[#EFF0EB]/90 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link
@@ -63,7 +63,7 @@ export default function Navigation() {
               </Link>
               {item.sub.length > 0 && openDropdown === item.href && (
                 <div className="absolute top-full left-0 pt-2 w-52">
-                  <div className="bg-[#F5F1EA] border border-[#EAE4DC] shadow-sm py-2">
+                  <div className="bg-[#EFF0EB] border border-[#EAE4DC] shadow-sm py-2">
                     {item.sub.map((s) => (
                       <Link
                         key={s.href}
@@ -102,7 +102,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-[#EAE4DC] bg-[#F5F1EA]">
+        <div className="md:hidden border-t border-[#EAE4DC] bg-[#EFF0EB]">
           {nav.map((item) => (
             <div key={item.href}>
               <Link

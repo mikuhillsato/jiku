@@ -67,7 +67,7 @@ export default function PillarsPage() {
         <div className="mb-20">
           <div className="grid grid-cols-4 gap-px bg-[#EAE4DC] mb-4">
             {pillars.map((p) => (
-              <div key={p.kanji} className="bg-[#1A1714] text-[#F5F1EA] p-6 text-center">
+              <div key={p.kanji} className="bg-[#1A1714] text-[#EFF0EB] p-6 text-center">
                 <p className="font-display text-5xl text-[#C4926A] mb-2">{p.kanji}</p>
                 <p className="text-xs tracking-widest text-[#8A7E75]">柱</p>
               </div>
@@ -75,14 +75,14 @@ export default function PillarsPage() {
           </div>
           <div className="grid grid-cols-4 gap-px bg-[#EAE4DC] mb-4">
             {["天干 (甲〜癸)", "天干 (甲〜癸)", "天干 (甲〜癸)", "天干 (甲〜癸)"].map((t, i) => (
-              <div key={i} className="bg-[#F5F1EA] p-4 text-center">
+              <div key={i} className="bg-[#EFF0EB] p-4 text-center">
                 <p className="text-xs text-[#8A7E75] tracking-wider">{t}</p>
               </div>
             ))}
           </div>
           <div className="grid grid-cols-4 gap-px bg-[#EAE4DC]">
             {["地支 (子〜亥)", "地支 (子〜亥)", "地支 (子〜亥)", "地支 (子〜亥)"].map((t, i) => (
-              <div key={i} className="bg-[#F5F1EA] p-4 text-center">
+              <div key={i} className="bg-[#EFF0EB] p-4 text-center">
                 <p className="text-xs text-[#8A7E75] tracking-wider">{t}</p>
               </div>
             ))}
@@ -95,7 +95,7 @@ export default function PillarsPage() {
         {/* Each pillar */}
         <div className="space-y-px bg-[#EAE4DC]">
           {pillars.map((pillar) => (
-            <div key={pillar.name} className="bg-[#F5F1EA] p-8 md:p-12">
+            <div key={pillar.name} className="bg-[#EFF0EB] p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
                 <div className="text-center md:text-left">
                   <p className="font-display text-7xl text-[#D6C5B0] font-light leading-none mb-2">

@@ -59,7 +59,7 @@ export default function ShichusuimeiPage() {
                 なお「時柱」は正確な出生時刻が必要になるため、時刻が不明な場合は年・月・日の三柱で読むこともある。
               </p>
             </div>
-            <div className="bg-[#1A1714] text-[#F5F1EA] p-8">
+            <div className="bg-[#1A1714] text-[#EFF0EB] p-8">
               <p className="text-xs tracking-[0.2em] text-[#C4926A] mb-6 uppercase">Five Elements — 五行</p>
               <div className="space-y-4">
                 {[
@@ -102,7 +102,7 @@ export default function ShichusuimeiPage() {
                 desc: "10年ごとに変わる「大運」と年ごとの「流年」が、いつ追い風が吹き、いつ内側を固める時期かを示す。時代を読んで動くための羅針盤になる。",
               },
             ].map((item) => (
-              <div key={item.title} className="bg-[#F5F1EA] p-8">
+              <div key={item.title} className="bg-[#EFF0EB] p-8">
                 <h3 className="font-display text-xl font-light mb-4 text-[#8B5E3C]">{item.title}</h3>
                 <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{item.desc}</p>
               </div>
@@ -118,7 +118,7 @@ export default function ShichusuimeiPage() {
               <Link
                 key={page.href}
                 href={page.href}
-                className="group bg-[#F5F1EA] p-8 hover:bg-[#EAE4DC] transition-colors duration-300 block"
+                className="group bg-[#EFF0EB] p-8 hover:bg-[#EAE4DC] transition-colors duration-300 block"
               >
                 <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">{page.titleEn}</p>
                 <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#8B5E3C] transition-colors">

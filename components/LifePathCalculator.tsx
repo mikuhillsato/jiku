@@ -72,7 +72,7 @@ export default function LifePathCalculator() {
   const meaning = result !== null ? meanings[result] : null;
 
   return (
-    <div className="bg-[#1A1714] text-[#F5F1EA] p-8 md:p-12">
+    <div className="bg-[#1A1714] text-[#EFF0EB] p-8 md:p-12">
       <p className="text-xs tracking-[0.2em] text-[#C4926A] mb-3 uppercase">Calculator</p>
       <h3 className="font-display text-3xl font-light mb-2">ライフパスナンバーを調べる</h3>
       <p className="text-xs text-[#8A7E75] tracking-wider mb-8">生年月日を入力してください</p>
@@ -82,11 +82,11 @@ export default function LifePathCalculator() {
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="flex-1 bg-[#2A2520] text-[#F5F1EA] border border-[#3A3530] px-4 py-3 text-sm tracking-wider focus:outline-none focus:border-[#8B5E3C] transition-colors"
+          className="flex-1 bg-[#2A2520] text-[#EFF0EB] border border-[#3A3530] px-4 py-3 text-sm tracking-wider focus:outline-none focus:border-[#8B5E3C] transition-colors"
         />
         <button
           onClick={calculate}
-          className="px-6 py-3 bg-[#8B5E3C] text-[#F5F1EA] text-xs tracking-[0.2em] hover:bg-[#C4926A] transition-colors duration-300 whitespace-nowrap"
+          className="px-6 py-3 bg-[#8B5E3C] text-[#EFF0EB] text-xs tracking-[0.2em] hover:bg-[#C4926A] transition-colors duration-300 whitespace-nowrap"
         >
           計算する
         </button>
@@ -97,7 +97,7 @@ export default function LifePathCalculator() {
       {steps.length > 0 && (
         <div className="bg-[#111] p-5 mb-6 font-mono text-sm text-[#C4926A] leading-loose">
           {steps.map((step, i) => (
-            <p key={i} className={i === steps.length - 1 ? "text-[#F5F1EA] font-bold" : ""}>
+            <p key={i} className={i === steps.length - 1 ? "text-[#EFF0EB] font-bold" : ""}>
               {step}
             </p>
           ))}

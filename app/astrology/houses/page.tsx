@@ -116,7 +116,7 @@ export default function HousesPage() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
           {houses.map((house) => (
-            <div key={house.number} className="bg-[#F5F1EA] p-8">
+            <div key={house.number} className="bg-[#EFF0EB] p-8">
               <div className="flex gap-6 items-start">
                 <span className="font-display text-4xl text-[#D6C5B0] font-light shrink-0 w-12">
                   {house.number}
