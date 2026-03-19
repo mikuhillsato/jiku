@@ -218,6 +218,9 @@ export default function LifePathCalculator() {
               placeholder="例: YUKI TANAKA"
               className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors placeholder:text-[#CCCCCC]"
             />
+            <p className="text-[9px] text-[#AAAAAA] tracking-wider mt-1.5">
+              姓名の順番・スペースの有無は結果に影響しません
+            </p>
           </div>
         </div>
         <button
