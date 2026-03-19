@@ -25,6 +25,20 @@ export const metadata: Metadata = {
   },
   description:
     "西洋占星術・四柱推命・数秘術・算命学。占術を自己理解のツールとして使い、自分の人生とキャリアを設計する。",
+  openGraph: {
+    title: "MyJiku | 星と命式が導く、自分軸の羅針盤",
+    description:
+      "西洋占星術・四柱推命・数秘術・算命学。占術を自己理解のツールとして使い、自分の人生とキャリアを設計する。",
+    siteName: "MyJiku",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MyJiku | 星と命式が導く、自分軸の羅針盤",
+    description:
+      "西洋占星術・四柱推命・数秘術・算命学。占術を自己理解のツールとして使い、自分の人生とキャリアを設計する。",
+  },
 };
 
 export default function RootLayout({
