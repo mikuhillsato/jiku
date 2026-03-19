@@ -50,7 +50,7 @@ export default function PillarsPage() {
             Four Pillars — Shichusuimei
           </span>
         </div>
-        <div className="px-12 py-12">
+        <div className="px-4 md:px-12 py-6 md:py-12">
           <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
             <Link href="/shichusuimei" className="hover:text-[#111111] transition-colors">四柱推命</Link>
             <span>/</span>

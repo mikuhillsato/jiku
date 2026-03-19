@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SunSignSim from "@/components/SunSignSim";
+import AstrologySim from "@/components/AstrologySim";
 
 export const metadata: Metadata = {
   title: "西洋占星術",
@@ -21,6 +21,12 @@ const subPages = [
     titleEn: "Houses",
     desc: "第1室から第12室まで、人生の12の領域。仕事・お金・人間関係・精神性——それぞれのハウスに惑星が入ることの意味。",
   },
+  {
+    href: "/astrology/signs",
+    title: "12星座の意味",
+    titleEn: "Signs",
+    desc: "牡羊座から魚座まで、12星座それぞれの気質・テーマ・エレメントを解説。太陽星座を軸に、あなたの本質を読み解く入口。",
+  },
 ];
 
 export default function AstrologyPage() {
@@ -33,7 +39,7 @@ export default function AstrologyPage() {
             Western Astrology — MyJiku
           </span>
         </div>
-        <div className="px-12 py-16">
+        <div className="px-4 md:px-12 py-8 md:py-16">
           <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">01 — Western Astrology</p>
           <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
             西洋占星術
@@ -177,7 +183,7 @@ export default function AstrologyPage() {
             <div className="flex-1 h-px bg-[#E0DDD6]" />
             <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
           </div>
-          <SunSignSim />
+          <AstrologySim />
         </section>
 
         {/* Sub-pages */}

@@ -29,7 +29,7 @@ export default function SanmeigakuPage() {
             Sanmeigaku — MyJiku
           </span>
         </div>
-        <div className="px-12 py-16">
+        <div className="px-4 md:px-12 py-8 md:py-16">
           <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">04 — Sanmeigaku</p>
           <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
             算命学
@@ -45,7 +45,7 @@ export default function SanmeigakuPage() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Overview */}
         <section className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-10">
             <div>
               <p className="font-display italic text-[#888888] text-lg mb-4">overview</p>
               <h2 className="font-display text-4xl font-light mb-6">算命学とは</h2>
@@ -64,24 +64,22 @@ export default function SanmeigakuPage() {
                 陰占が先天的な宿命の骨格を示し、陽占の宿命星・位相法が具体的な気質と人間関係のパターンを示す。
               </p>
             </div>
-            <div className="space-y-4">
-              <SanmeiBodyMap />
-              <div className="bg-[#EAEAE6] p-8">
-                <p className="text-xs tracking-[0.2em] text-[#888888] mb-4 uppercase">Structure</p>
-                <div className="space-y-3">
-                  {[
-                    { term: "陰占（いんせん）", desc: "天干・地支による命式の骨格。先天的な宿命の枠組み。" },
-                    { term: "陽占（ようせん）", desc: "10の宿命星・位相法・後天運による気質と運の具体的な読み。" },
-                    { term: "守護神（しゅごじん）", desc: "命式のバランスを整える五行の「鍵」。意識することで運が整う。" },
-                    { term: "位相法（いそうほう）", desc: "十二支同士の関係性（合・冲・害など）が示す人間関係のパターン。" },
-                  ].map((item) => (
-                    <div key={item.term} className="border-b border-[#D0CCC4] pb-3 last:border-0 last:pb-0">
-                      <p className="text-sm font-display text-[#111111] mb-1">{item.term}</p>
-                      <p className="text-xs text-[#888888] tracking-wider">{item.desc}</p>
-                    </div>
-                  ))}
+            <SanmeiBodyMap />
+          </div>
+          <div className="bg-[#EAEAE6] p-8">
+            <p className="text-xs tracking-[0.2em] text-[#888888] mb-4 uppercase">Structure</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-3">
+              {[
+                { term: "陰占（いんせん）", desc: "天干・地支による命式の骨格。先天的な宿命の枠組み。" },
+                { term: "陽占（ようせん）", desc: "10の宿命星・位相法・後天運による気質と運の具体的な読み。" },
+                { term: "守護神（しゅごじん）", desc: "命式のバランスを整える五行の「鍵」。意識することで運が整う。" },
+                { term: "位相法（いそうほう）", desc: "十二支同士の関係性（合・冲・害など）が示す人間関係のパターン。" },
+              ].map((item) => (
+                <div key={item.term} className="border-b border-[#D0CCC4] pb-3">
+                  <p className="text-sm font-display text-[#111111] mb-1">{item.term}</p>
+                  <p className="text-xs text-[#888888] tracking-wider">{item.desc}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

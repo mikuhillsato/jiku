@@ -119,7 +119,7 @@ export default function PlanetsPage() {
             Planets — Western Astrology
           </span>
         </div>
-        <div className="px-12 py-12">
+        <div className="px-4 md:px-12 py-6 md:py-12">
           <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
             <Link href="/astrology" className="hover:text-[#111111] transition-colors">西洋占星術</Link>
             <span>/</span>
