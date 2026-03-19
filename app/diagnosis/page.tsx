@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import IntegratedSim from "@/components/IntegratedSim";
 
 export const metadata: Metadata = {
@@ -71,7 +72,9 @@ export default function DiagnosisPage() {
             <div className="flex-1 h-px bg-[#E0DDD6]" />
             <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
           </div>
-          <IntegratedSim />
+          <Suspense fallback={<div className="h-40 bg-[#F4F4F2] animate-pulse" />}>
+            <IntegratedSim />
+          </Suspense>
         </section>
 
         {/* Links to individual systems */}
