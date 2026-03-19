@@ -124,7 +124,7 @@ export default function AboutPage() {
         </section>
 
         {/* Vision */}
-        <section>
+        <section className="mb-24">
           <AnimateIn>
             <div className="bg-[#111111] text-[#F9F9F7] p-12 md:p-16">
               <p className="font-display italic text-[#888888] text-lg mb-6">vision</p>
@@ -145,6 +145,41 @@ export default function AboutPage() {
               <div className="mt-10 pt-10 border-t border-[#333333]">
                 <p className="font-display italic text-[#888888]">Know yourself. Design your life.</p>
               </div>
+            </div>
+          </AnimateIn>
+        </section>
+
+        {/* Contact */}
+        <section>
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-12">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">contact</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+          </div>
+
+          <AnimateIn>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
+              <a
+                href="https://www.instagram.com/miku_sugar_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F4F4F2] p-8 flex items-center gap-4 group hover:bg-[#EAEAE6] transition-colors"
+              >
+                <span className="font-display text-2xl text-[#CCCCCC] font-light">IG</span>
+                <div>
+                  <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Instagram</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">@miku_sugar_</p>
+                </div>
+              </a>
+              <a
+                href="mailto:mikusbh@gmail.com"
+                className="bg-[#F4F4F2] p-8 flex items-center gap-4 group hover:bg-[#EAEAE6] transition-colors"
+              >
+                <span className="font-display text-2xl text-[#CCCCCC] font-light">@</span>
+                <div>
+                  <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Email</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">mikusbh@gmail.com</p>
+                </div>
+              </a>
             </div>
           </AnimateIn>
         </section>
