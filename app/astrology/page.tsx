@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SunSignSim from "@/components/SunSignSim";
 
 export const metadata: Metadata = {
   title: "西洋占星術",
@@ -167,6 +168,16 @@ export default function AstrologyPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Simulation */}
+        <section className="mb-12">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+            <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
+          </div>
+          <SunSignSim />
         </section>
 
         {/* Sub-pages */}

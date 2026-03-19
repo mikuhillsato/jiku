@@ -83,10 +83,18 @@ export default function NumerologyPage() {
                 複数の数字を組み合わせてより立体的な自己像を描くことができる。
               </p>
             </div>
-            <div>
-              <LifePathCalculator />
-            </div>
+            <HowToCalculate />
           </div>
+        </section>
+
+        {/* Simulation */}
+        <section className="mb-20">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+            <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
+          </div>
+          <LifePathCalculator />
         </section>
 
         {/* Key numbers */}
