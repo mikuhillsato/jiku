@@ -2,122 +2,332 @@
 
 import { useState } from "react";
 
-const meanings: Record<number, { keyword: string; desc: string }> = {
-  1: { keyword: "開拓・先駆・独立", desc: "新しい道を切り拓くリーダー。自立心が強く、最初に動く勇気を持つ。人生テーマは「自分の道を自分で選ぶ」こと。" },
-  2: { keyword: "調和・協力・感受性", desc: "人と人をつなぐ調停者。繊細な感受性と共感力で周囲の空気を読む。2の人生テーマは「関係性の中で本物の自分を保つ」こと。" },
-  3: { keyword: "表現・創造・喜び", desc: "表現することで人を喜ばせるエンターテイナー。言葉・アート・音楽など、創造的な出力が人生の核になる。" },
-  4: { keyword: "構築・実直・安定", desc: "着実に土台を築くビルダー。ルール・構造・コツコツとした積み上げを好む。4の使命は「揺るぎない基盤を作る」こと。" },
-  5: { keyword: "自由・変化・冒険", desc: "変化と自由を愛するエクスプローラー。多様な経験を通じて成長する。5の人生テーマは「変化を恐れずに生きる」こと。" },
-  6: { keyword: "奉仕・愛・責任", desc: "愛と責任で人を育てるナーチャラー。家族・コミュニティ・ケアが人生の中心軸になりやすい。" },
-  7: { keyword: "探求・知性・精神性", desc: "真実を探求する哲学者。深く考え、分析し、内省する。7の使命は「表面の先にある真実を掘り下げる」こと。" },
-  8: { keyword: "達成・権力・豊かさ", desc: "大きな目標に向かって動くアチーバー。リーダーシップ・財・権力の正しい使い方が人生のテーマ。" },
-  9: { keyword: "完成・慈愛・解放", desc: "全体を見渡し、愛で包む完成者。人道的な使命感と広い視野を持つ。9の人生テーマは「手放すことで与える」こと。" },
-  11: { keyword: "直感・インスピレーション・使命", desc: "マスターナンバー。高い直感力と霊的な感受性を持つ。11の使命は「インスピレーションを人々に届ける」こと。" },
-  22: { keyword: "実現・建設・変革", desc: "マスターナンバー。大きなビジョンを現実に落とし込む「マスタービルダー」。社会を動かすスケールの仕事に引き寄せられる。" },
-  33: { keyword: "慈愛・奉仕・教え", desc: "マスターナンバー。純粋な愛と慈悲で世界に奉仕する「マスターティーチャー」。その使命は大きく、精神的な成熟を要する。" },
+// ── Pythagorean chart ──────────────────────────────────────────────────────
+const PYTHAGOREAN: Record<string, number> = {
+  a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,
+  j:1,k:2,l:3,m:4,n:5,o:6,p:7,q:8,r:9,
+  s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8,
+};
+const VOWELS = new Set(["a","e","i","o","u"]);
+
+// ── Core meanings (shared base, role interpreted in reading) ───────────────
+const meanings: Record<number, { keyword: string; lifePath: string; destiny: string; soul: string }> = {
+  1: {
+    keyword: "開拓・先駆・独立",
+    lifePath: "新しい道を自分で切り拓くことが人生のテーマ。リーダーシップと自立心が問われ、他者に依存せず自らの判断で進む力を育てることが使命。",
+    destiny: "先駆者・開拓者としての役割を外の世界で担う。独自の視点でゼロから生み出すことで本領を発揮する。",
+    soul:    "魂の奥底では「誰よりも先に動きたい」「自分だけの道を歩みたい」という渇望が燃えている。",
+  },
+  2: {
+    keyword: "調和・協力・感受性",
+    lifePath: "人間関係と協調の中で学び、成長することが人生テーマ。繊細な感受性と共感力を磨き、「関係性の中で本物の自分を保つ」ことが使命。",
+    destiny: "橋渡し役・調停者として、対立を和らげ人々をつなぐことを求められる。",
+    soul:    "魂が求めているのは「深くつながること」「誰かとともに在ること」という温かな一体感。",
+  },
+  3: {
+    keyword: "表現・創造・喜び",
+    lifePath: "表現と創造を通じて世界に喜びをもたらすことが使命。言葉・アート・音楽など、あらゆる創造的な出力が人生の核になる。",
+    destiny: "エンターテイナー・クリエイターとして、作ることや伝えることで人々を明るくする役割を持つ。",
+    soul:    "魂の渇望は「自分を表現すること」「作り出す喜び」への純粋な衝動。",
+  },
+  4: {
+    keyword: "構築・実直・安定",
+    lifePath: "着実に土台を築くことが人生テーマ。ルール・構造・地道な積み上げを通じて「揺るぎない基盤を作る」使命を持つ。",
+    destiny: "社会の仕組みや組織を支える実務家として、信頼される基盤を構築する役割を担う。",
+    soul:    "魂が真に求めているのは「安定」「確かなもの」「揺らがない土台」への安心感。",
+  },
+  5: {
+    keyword: "自由・変化・冒険",
+    lifePath: "変化と多様な経験を通じて成長することが人生テーマ。「変化を恐れずに生きる」ことが使命で、自由の中に意味を見出す。",
+    destiny: "旅人・変革者として、新しい風を吹き込み固定観念を破る役割を持つ。",
+    soul:    "魂が求めているのは「縛られない自由」「次の体験への好奇心」という解放感。",
+  },
+  6: {
+    keyword: "奉仕・愛・責任",
+    lifePath: "愛と責任で人を育て支えることが人生テーマ。家族・コミュニティへのケアが人生の中心軸になる。",
+    destiny: "ヒーラー・養育者として、人を癒し育てることで外の世界に貢献する使命を持つ。",
+    soul:    "魂が求めているのは「誰かの役に立つこと」「愛し愛されること」という温かい繋がり。",
+  },
+  7: {
+    keyword: "探求・知性・精神性",
+    lifePath: "真実の探求と内省が人生テーマ。「表面の先にある真実を掘り下げる」ことが使命で、哲学・分析・精神性に導かれる。",
+    destiny: "研究者・哲学者として、深い洞察を外の世界にもたらす役割を持つ。",
+    soul:    "魂の渇望は「本当のことを知ること」「真実の核に触れること」への止まらない探求心。",
+  },
+  8: {
+    keyword: "達成・権力・豊かさ",
+    lifePath: "大きな目標に向かって邁進することが人生テーマ。リーダーシップと財、権力の正しい使い方を学ぶ。",
+    destiny: "経営者・アチーバーとして、物質的・社会的な成果を通じて世界に影響を与える使命を担う。",
+    soul:    "魂が求めているのは「達成感」「影響力を持つこと」「本物の力を手に入れること」。",
+  },
+  9: {
+    keyword: "完成・慈愛・解放",
+    lifePath: "全体を愛で包む「完成者」として生きることが人生テーマ。「手放すことで与える」ことを学ぶ使命を持つ。",
+    destiny: "人道的なビジョンを持つ啓発者として、広い愛と叡智を社会に還元する役割を持つ。",
+    soul:    "魂が求めているのは「すべてを受け入れること」「人類と繋がる感覚」という境界のない愛。",
+  },
+  11: {
+    keyword: "直感・インスピレーション・使命",
+    lifePath: "高い直感力と霊的感受性で人々にインスピレーションを届けることが使命。マスターナンバーゆえのプレッシャーとともに、大きな影響力を持つ。",
+    destiny: "ビジョナリー・インスピレーターとして、見えない世界のメッセージを人々に届ける役割を担う。",
+    soul:    "魂の渇望は「より高次なものとつながること」「直感が示す道を歩むこと」。",
+  },
+  22: {
+    keyword: "実現・建設・変革",
+    lifePath: "大きなビジョンを現実に落とし込む「マスタービルダー」の使命を持つ。社会を動かすスケールの仕事と共鳴する。",
+    destiny: "理想を現実に変える建設者として、社会に永続的な構造物（仕組み・組織・作品）を残す役割を持つ。",
+    soul:    "魂が求めているのは「壮大な夢を実現させること」「世界を変える何かを作り上げること」。",
+  },
+  33: {
+    keyword: "慈愛・奉仕・教え",
+    lifePath: "純粋な愛と慈悲で世界に奉仕する「マスターティーチャー」の使命。稀な数字で、精神的な成熟を要する。",
+    destiny: "教師・治癒者として、愛の力で人々の魂に光を届ける最高位の使命を担う。",
+    soul:    "魂の渇望は「すべての存在を等しく愛すること」「愛そのものとして在ること」。",
+  },
 };
 
-function calcLifePath(dateStr: string): number | null {
+// ── Helpers ────────────────────────────────────────────────────────────────
+function reduceNumber(n: number): number {
+  while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
+    n = String(n).split("").map(Number).reduce((a, b) => a + b, 0);
+  }
+  return n;
+}
+
+function calcLifePath(dateStr: string): { result: number; steps: string[] } | null {
   const digits = dateStr.replace(/-/g, "").split("").map(Number);
   if (digits.length !== 8 || digits.some(isNaN)) return null;
 
-  // Sum all digits
-  let sum = digits.reduce((a, b) => a + b, 0);
+  const steps: string[] = [];
+  let current = digits.reduce((a, b) => a + b, 0);
+  steps.push(`${digits.join(" + ")} = ${current}`);
 
-  // Reduce, but keep master numbers
-  while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33) {
-    sum = String(sum)
-      .split("")
-      .map(Number)
-      .reduce((a, b) => a + b, 0);
+  while (current > 9 && current !== 11 && current !== 22 && current !== 33) {
+    const d = String(current).split("").map(Number);
+    const next = d.reduce((a, b) => a + b, 0);
+    steps.push(`${d.join(" + ")} = ${next}`);
+    current = next;
   }
-  return sum;
+  return { result: current, steps };
 }
 
+function calcDestiny(name: string): number | null {
+  const letters = name.toLowerCase().replace(/[^a-z]/g, "").split("");
+  if (letters.length === 0) return null;
+  const sum = letters.reduce((a, l) => a + (PYTHAGOREAN[l] ?? 0), 0);
+  return reduceNumber(sum);
+}
+
+function calcSoul(name: string): number | null {
+  const letters = name.toLowerCase().split("").filter(l => VOWELS.has(l));
+  if (letters.length === 0) return null;
+  const sum = letters.reduce((a, l) => a + (PYTHAGOREAN[l] ?? 0), 0);
+  return reduceNumber(sum);
+}
+
+function buildIntegration(lp: number, dest: number, soul: number): string {
+  const lpKw   = meanings[lp]?.keyword.split("・")[0]   ?? "";
+  const destKw = meanings[dest]?.keyword.split("・")[0] ?? "";
+  const soulKw = meanings[soul]?.keyword.split("・")[0] ?? "";
+
+  let dynamic = "";
+  if (lp === dest && dest === soul) {
+    dynamic = `三つすべてが${lp}に収束している。これは極めて稀な一致で、人生テーマ・外的使命・魂の渇望が完全に統合されていることを意味する。迷いが少ない反面、その一つの軸への集中が人生全体の方向性を決定づける。`;
+  } else if (lp === soul) {
+    dynamic = `ライフパスとソウルが同じ${lp}という数字は、人生のテーマと魂の渇望が一致していることを意味する。モチベーションの源泉と人生の方向性が重なり、デスティニー${dest}が求める外の役割を担うほどに内側が満たされる構造にある。`;
+  } else if (dest === soul) {
+    dynamic = `デスティニーとソウルが同じ${dest}であることは、外への使命と内なる渇望が同じ方向を向いていることを意味する。「やりたいこと」と「求められること」のズレが少なく、ライフパス${lp}の学びを深めるにつれてその一致した軸がさらに力を持つ。`;
+  } else if (lp === dest) {
+    dynamic = `ライフパスとデスティニーが同じ${lp}という一致は、人生テーマと社会での役割が自然に重なることを意味する。ソウル${soul}が示す内なる渇望——「${soulKw}」への欲求——を大切にすることが、外側の成果をより深い充実に変えるカギとなる。`;
+  } else {
+    dynamic = `三つの数字がそれぞれ異なる方向を示しているが、これは矛盾ではなく多層的な豊かさだ。「${lpKw}」という人生の学びの道、「${destKw}」という外への使命、「${soulKw}」という魂の渇望——この三つを意識しながら生きることで、一次元的ではない立体的な人生が開かれる。`;
+  }
+
+  return (
+    `ライフパス${lp}は「${lpKw}」というテーマで人生を歩む方向性を示す。` +
+    `デスティニー${dest}は外の世界で「${destKw}」を体現する役割を求め、` +
+    `ソウル${soul}の根底には「${soulKw}」への深い渇望が流れている。` +
+    dynamic
+  );
+}
+
+// ── Component ──────────────────────────────────────────────────────────────
 export default function LifePathCalculator() {
-  const [date, setDate] = useState("");
-  const [result, setResult] = useState<number | null>(null);
-  const [steps, setSteps] = useState<string[]>([]);
-  const [error, setError] = useState("");
+  const [date,   setDate]   = useState("");
+  const [name,   setName]   = useState("");
+  const [lpData, setLpData] = useState<{ result: number; steps: string[] } | null>(null);
+  const [destiny, setDestiny] = useState<number | null>(null);
+  const [soul,    setSoul]    = useState<number | null>(null);
+  const [error,  setError]  = useState("");
 
   function calculate() {
     setError("");
-    setResult(null);
-    setSteps([]);
+    setLpData(null);
+    setDestiny(null);
+    setSoul(null);
 
-    if (!date) {
-      setError("生年月日を入力してください");
-      return;
+    if (!date) { setError("生年月日を入力してください"); return; }
+
+    const lp = calcLifePath(date);
+    if (!lp) { setError("正しい日付を入力してください"); return; }
+    setLpData(lp);
+
+    if (name.trim()) {
+      setDestiny(calcDestiny(name));
+      setSoul(calcSoul(name));
     }
-
-    const digits = date.replace(/-/g, "").split("").map(Number);
-    const stepList: string[] = [];
-
-    // Step 1
-    const sum1 = digits.reduce((a, b) => a + b, 0);
-    stepList.push(`${digits.join(" + ")} = ${sum1}`);
-
-    let current = sum1;
-    while (current > 9 && current !== 11 && current !== 22 && current !== 33) {
-      const d = String(current).split("").map(Number);
-      const next = d.reduce((a, b) => a + b, 0);
-      stepList.push(`${d.join(" + ")} = ${next}`);
-      current = next;
-    }
-
-    setSteps(stepList);
-    setResult(current);
   }
 
-  const meaning = result !== null ? meanings[result] : null;
+  const lpNum      = lpData?.result ?? null;
+  const hasName    = destiny !== null && soul !== null;
+  const integration = lpNum !== null && hasName
+    ? buildIntegration(lpNum, destiny!, soul!)
+    : null;
 
   return (
-    <div className="bg-[#111111] text-[#F9F9F7] p-8 md:p-12">
-      <p className="text-xs tracking-[0.2em] text-[#888888] mb-3 uppercase">Calculator</p>
-      <h3 className="font-display text-3xl font-light mb-2">ライフパスナンバーを調べる</h3>
-      <p className="text-xs text-[#888888] tracking-wider mb-8">生年月日を入力してください</p>
+    <div className="border border-[#E0DDD6]">
+      {/* Header */}
+      <div className="flex items-center h-[38px] border-b border-[#111111] px-5">
+        <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-4">数秘術 計算</span>
+        <div className="flex-1 h-px bg-[#E0DDD6]" />
+        <span className="text-[8px] tracking-[0.3em] text-[#CCC] ml-4">Numerology</span>
+      </div>
 
-      <div className="flex gap-3 mb-6">
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="flex-1 bg-[#F4F4F2] text-[#111111] border border-[#E0DDD6] px-4 py-3 text-sm tracking-wider focus:outline-none focus:border-[#111111] transition-colors"
-        />
+      <div className="p-6 md:p-8">
+        {/* Inputs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+          <div>
+            <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">
+              生年月日
+            </label>
+            <input
+              type="date"
+              value={date}
+              onChange={e => setDate(e.target.value)}
+              className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors"
+            />
+          </div>
+          <div>
+            <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">
+              フルネーム（ローマ字） <span className="text-[#BBBBBB] normal-case">— ソウル・デスティニー用・任意</span>
+            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="例: YUKI TANAKA"
+              className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors placeholder:text-[#CCCCCC]"
+            />
+          </div>
+        </div>
         <button
           onClick={calculate}
-          className="px-6 py-3 bg-[#F9F9F7] text-[#111111] text-xs tracking-[0.2em] hover:bg-[#EAEAE6] transition-colors duration-300 whitespace-nowrap"
+          className="mt-4 px-6 py-2.5 bg-[#111111] text-[#F9F9F7] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors"
         >
           計算する
         </button>
-      </div>
 
-      {error && <p className="text-xs text-red-400 mb-4">{error}</p>}
+        {error && <p className="text-xs text-red-500 mt-3">{error}</p>}
 
-      {steps.length > 0 && (
-        <div className="bg-[#F9F9F7] p-5 mb-6 font-mono text-sm text-[#888888] leading-loose">
-          {steps.map((step, i) => (
-            <p key={i} className={i === steps.length - 1 ? "text-[#111111] font-bold" : ""}>
-              {step}
-            </p>
-          ))}
-        </div>
-      )}
-
-      {result !== null && meaning && (
-        <div className="border border-[#E0DDD6] p-6 animate-fade-in">
-          <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-display text-7xl text-[#888888] font-light leading-none">
-              {result}
-            </span>
-            <div>
-              <p className="text-xs text-[#888888] tracking-wider mb-1">Life Path Number</p>
-              <p className="text-sm text-[#888888] tracking-wider">{meaning.keyword}</p>
-            </div>
+        {/* Life Path calculation steps */}
+        {lpData && (
+          <div className="mt-6 bg-[#F4F4F2] p-4 font-mono text-sm text-[#888888] leading-loose">
+            <p className="text-[8px] tracking-[0.3em] uppercase text-[#AAAAAA] mb-2">Life Path — 計算過程</p>
+            {lpData.steps.map((step, i) => (
+              <p key={i} className={i === lpData.steps.length - 1 ? "text-[#111111] font-bold" : ""}>
+                {step}
+              </p>
+            ))}
           </div>
-          <p className="text-sm text-[#555555] leading-loose tracking-wider">{meaning.desc}</p>
-        </div>
-      )}
+        )}
+
+        {/* Three numbers */}
+        {lpNum !== null && (
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E0DDD6]">
+            {/* Life Path */}
+            <NumberCard
+              num={lpNum}
+              label="Life Path Number"
+              labelJa="ライフパスナンバー"
+              role="lifePath"
+            />
+            {/* Destiny */}
+            {hasName ? (
+              <NumberCard
+                num={destiny!}
+                label="Destiny Number"
+                labelJa="デスティニーナンバー"
+                role="destiny"
+              />
+            ) : (
+              <EmptyCard label="Destiny Number" labelJa="デスティニーナンバー" hint="名前を入力すると計算されます" />
+            )}
+            {/* Soul */}
+            {hasName ? (
+              <NumberCard
+                num={soul!}
+                label="Soul Number"
+                labelJa="ソウルナンバー"
+                role="soul"
+              />
+            ) : (
+              <EmptyCard label="Soul Number" labelJa="ソウルナンバー" hint="名前（ローマ字）の母音から計算" />
+            )}
+          </div>
+        )}
+
+        {/* Integration reading */}
+        {integration && (
+          <div className="mt-6 bg-[#111111] p-6 md:p-8">
+            <p className="text-[8px] tracking-[0.5em] uppercase mb-5 text-[#555555]">
+              Integration — 三つの数字が語ること
+            </p>
+            <p style={{
+              fontFamily: "var(--font-cormorant), Georgia, serif",
+              fontSize: "15px", fontWeight: 300, lineHeight: 2.1,
+              letterSpacing: "0.04em", color: "#C8C4B8",
+            }}>
+              {integration}
+            </p>
+            <p className="text-[8px] tracking-[0.3em] mt-5 pt-4 border-t border-[#222222] text-[#333333]">
+              ※ ライフパス：生年月日 / デスティニー：フルネーム全文字 / ソウル：フルネームの母音（ピタゴラス式）
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Sub-components ─────────────────────────────────────────────────────────
+function NumberCard({
+  num, label, labelJa, role,
+}: {
+  num: number;
+  label: string;
+  labelJa: string;
+  role: "lifePath" | "destiny" | "soul";
+}) {
+  const m = meanings[num];
+  return (
+    <div className="bg-[#F4F4F2] p-6">
+      <p className="text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-0.5">{label}</p>
+      <p className="text-[9px] tracking-wider text-[#AAAAAA] mb-3">{labelJa}</p>
+      <div className="flex items-baseline gap-3 mb-3">
+        <span className="font-display text-6xl font-light text-[#CCCCCC] leading-none">{num}</span>
+        <span className="text-xs text-[#111111] tracking-wider">{m?.keyword}</span>
+      </div>
+      <p className="text-sm text-[#555555] leading-loose tracking-wider">{m?.[role]}</p>
+    </div>
+  );
+}
+
+function EmptyCard({ label, labelJa, hint }: { label: string; labelJa: string; hint: string }) {
+  return (
+    <div className="bg-[#F9F9F7] p-6 flex flex-col justify-center">
+      <p className="text-[8px] tracking-[0.3em] uppercase text-[#CCCCCC] mb-0.5">{label}</p>
+      <p className="text-[9px] tracking-wider text-[#DDDDDD] mb-3">{labelJa}</p>
+      <p className="text-xs text-[#CCCCCC] tracking-wider leading-loose">{hint}</p>
     </div>
   );
 }
