@@ -20,8 +20,8 @@ const noto = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: {
-    default: "SEIUN | 星と命式が導く、自分軸の羅針盤",
-    template: "%s | SEIUN",
+    default: "MyJiku | 星と命式が導く、自分軸の羅針盤",
+    template: "%s | MyJiku",
   },
   description:
     "西洋占星術・四柱推命・数秘術・算命学。占術を自己理解のツールとして使い、自分の人生とキャリアを設計する。",

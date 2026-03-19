@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <p className="font-display text-2xl tracking-[0.2em] mb-3">SEIUN</p>
+            <p className="font-display text-2xl tracking-[0.2em] mb-3">MyJiku</p>
             <p className="text-xs text-[#8888AA] leading-relaxed tracking-wider max-w-xs">
               占術は予言ではなく、自己理解のツール。<br />
               星と数字と命式が、あなたの羅針盤になる。
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#1A1F35] pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-xs text-[#8888AA] tracking-wider">© 2025 SEIUN. All rights reserved.</p>
+          <p className="text-xs text-[#8888AA] tracking-wider">© 2025 MyJiku. All rights reserved.</p>
           <p className="text-xs text-[#B8AEED] tracking-wider font-display italic">
             Know yourself. Design your life.
           </p>

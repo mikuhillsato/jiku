@@ -3,7 +3,7 @@ import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "About | このサイトについて",
-  description: "SEIUNのコンセプト・占術への向き合い方・このサイトが目指すもの。",
+  description: "MyJikuのコンセプト・占術への向き合い方・このサイトが目指すもの。",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
               <em className="not-italic text-[#8B7FCC]">自己理解</em>のツール。
             </h1>
             <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
-              SEIUNは「占い好き」のためのサイトではない。
+              MyJikuは「占い好き」のためのサイトではない。
               自分の人生を自分で設計したい人のための、占術という名の地図帳だ。
             </p>
           </AnimateIn>
@@ -44,7 +44,7 @@ export default function AboutPage() {
                 「今年の運勢は？」ではなく「私はどんな人間で、どこへ向かうべきか？」という問いを持つ人のために。
               </p>
               <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">
-                難解な専門用語を噛み砕きながら、でも本質は妥協せずに伝えること——それがSEIUNのスタンスだ。
+                難解な専門用語を噛み砕きながら、でも本質は妥協せずに伝えること——それがMyJikuのスタンスだ。
               </p>
             </AnimateIn>
 
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 一部にする。
               </h2>
               <p className="text-sm text-[#8888AA] leading-loose tracking-wider mb-6 max-w-lg">
-                SEIUNは、占術の解説サイトとして始まったが、目指すのはその先にある。
+                MyJikuは、占術の解説サイトとして始まったが、目指すのはその先にある。
                 自分の命式・ナンバー・ホロスコープを「知る」だけでなく、
                 それをキャリア設計・人間関係・ライフプランニングに活かす——
                 そのための伴走ができるサービスを育てていく予定だ。
