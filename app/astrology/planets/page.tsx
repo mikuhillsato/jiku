@@ -113,17 +113,17 @@ const planets = [
 export default function PlanetsPage() {
   return (
     <>
-      <div className="border-b border-[#1A1F35]">
+      <div className="border-b border-[#E0DDD6]">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#8888AA] tracking-wider mb-4">
-            <Link href="/astrology" className="hover:text-[#8B7FCC] transition-colors">西洋占星術</Link>
+          <div className="flex items-center gap-2 text-xs text-[#888888] tracking-wider mb-4">
+            <Link href="/astrology" className="hover:text-[#111111] transition-colors">西洋占星術</Link>
             <span>/</span>
             <span>惑星の意味</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#E8E5F5] mb-4">
+          <h1 className="font-display text-5xl md:text-6xl font-light text-[#111111] mb-4">
             惑星の意味
           </h1>
-          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
             西洋占星術では10の惑星（天体）を使う。それぞれが人間の心理・欲求・テーマを象徴し、
             「何を（惑星）」「どのように（星座）」「どの領域で（ハウス）」という三層の文法で読み解く。
           </p>
@@ -131,26 +131,26 @@ export default function PlanetsPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="space-y-px bg-[#1A1F35]">
+        <div className="space-y-px bg-[#EAEAE6]">
           {planets.map((planet) => (
-            <div key={planet.name} className="bg-[#0E1020] p-8 md:p-10">
+            <div key={planet.name} className="bg-[#F4F4F2] p-8 md:p-10">
               <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8">
                 {/* Planet visual + name */}
                 <div className="flex flex-col items-center md:items-start gap-3">
                   <PlanetVisual planet={planet.visual} size={72} />
                   <div>
-                    <p className="text-xs tracking-[0.2em] text-[#8888AA] uppercase mb-0.5">{planet.en}</p>
+                    <p className="text-xs tracking-[0.2em] text-[#888888] uppercase mb-0.5">{planet.en}</p>
                     <h2 className="font-display text-2xl font-light">{planet.name}</h2>
-                    <p className="text-xs text-[#303860] mt-1 tracking-wider">{planet.period}</p>
+                    <p className="text-xs text-[#CCCCCC] mt-1 tracking-wider">{planet.period}</p>
                   </div>
                 </div>
                 {/* Content */}
                 <div>
-                  <p className="text-xs tracking-[0.15em] text-[#8B7FCC] mb-3">{planet.keyword}</p>
-                  <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">{planet.desc}</p>
-                  <div className="border-l-2 border-[#1A1F35] pl-4">
-                    <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-1 uppercase">Career Lens</p>
-                    <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{planet.career}</p>
+                  <p className="text-xs tracking-[0.15em] text-[#111111] mb-3">{planet.keyword}</p>
+                  <p className="text-sm text-[#555555] leading-loose tracking-wider mb-4">{planet.desc}</p>
+                  <div className="border-l-2 border-[#E0DDD6] pl-4">
+                    <p className="text-xs tracking-[0.2em] text-[#888888] mb-1 uppercase">Career Lens</p>
+                    <p className="text-sm text-[#555555] leading-loose tracking-wider">{planet.career}</p>
                   </div>
                 </div>
               </div>

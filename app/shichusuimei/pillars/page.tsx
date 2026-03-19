@@ -44,17 +44,17 @@ const pillars = [
 export default function PillarsPage() {
   return (
     <>
-      <div className="border-b border-[#1A1F35]">
+      <div className="border-b border-[#E0DDD6]">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#8888AA] tracking-wider mb-4">
-            <Link href="/shichusuimei" className="hover:text-[#8B7FCC] transition-colors">四柱推命</Link>
+          <div className="flex items-center gap-2 text-xs text-[#888888] tracking-wider mb-4">
+            <Link href="/shichusuimei" className="hover:text-[#111111] transition-colors">四柱推命</Link>
             <span>/</span>
             <span>年柱・月柱・日柱・時柱</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#E8E5F5] mb-4">
+          <h1 className="font-display text-5xl md:text-6xl font-light text-[#111111] mb-4">
             四つの柱
           </h1>
-          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
             四柱推命の「四柱」とは、年・月・日・時の四つの柱のこと。
             それぞれの柱に天干（十干）と地支（十二支）が配置され、計8文字の命式が生まれる。
             この命式が、その人の人生の設計図となる。
@@ -65,51 +65,51 @@ export default function PillarsPage() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Visual of the four pillars */}
         <div className="mb-20">
-          <div className="grid grid-cols-4 gap-px bg-[#1A1F35] mb-4">
+          <div className="grid grid-cols-4 gap-px bg-[#EAEAE6] mb-4">
             {pillars.map((p) => (
-              <div key={p.kanji} className="bg-[#0D1028] text-[#E8E5F5] p-6 text-center">
-                <p className="font-display text-5xl text-[#B8AEED] mb-2">{p.kanji}</p>
-                <p className="text-xs tracking-widest text-[#8888AA]">柱</p>
+              <div key={p.kanji} className="bg-[#111111] text-[#F9F9F7] p-6 text-center">
+                <p className="font-display text-5xl text-[#888888] mb-2">{p.kanji}</p>
+                <p className="text-xs tracking-widest text-[#888888]">柱</p>
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-4 gap-px bg-[#1A1F35] mb-4">
+          <div className="grid grid-cols-4 gap-px bg-[#EAEAE6] mb-4">
             {["天干 (甲〜癸)", "天干 (甲〜癸)", "天干 (甲〜癸)", "天干 (甲〜癸)"].map((t, i) => (
-              <div key={i} className="bg-[#0E1020] p-4 text-center">
-                <p className="text-xs text-[#8888AA] tracking-wider">{t}</p>
+              <div key={i} className="bg-[#F4F4F2] p-4 text-center">
+                <p className="text-xs text-[#888888] tracking-wider">{t}</p>
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-4 gap-px bg-[#1A1F35]">
+          <div className="grid grid-cols-4 gap-px bg-[#EAEAE6]">
             {["地支 (子〜亥)", "地支 (子〜亥)", "地支 (子〜亥)", "地支 (子〜亥)"].map((t, i) => (
-              <div key={i} className="bg-[#0E1020] p-4 text-center">
-                <p className="text-xs text-[#8888AA] tracking-wider">{t}</p>
+              <div key={i} className="bg-[#F4F4F2] p-4 text-center">
+                <p className="text-xs text-[#888888] tracking-wider">{t}</p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-[#8888AA] tracking-wider text-center mt-4">
+          <p className="text-xs text-[#888888] tracking-wider text-center mt-4">
             計8文字（天干4文字 + 地支4文字）が命式を構成する
           </p>
         </div>
 
         {/* Each pillar */}
-        <div className="space-y-px bg-[#1A1F35]">
+        <div className="space-y-px bg-[#EAEAE6]">
           {pillars.map((pillar) => (
-            <div key={pillar.name} className="bg-[#0E1020] p-8 md:p-12">
+            <div key={pillar.name} className="bg-[#F4F4F2] p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
                 <div className="text-center md:text-left">
-                  <p className="font-display text-7xl text-[#303860] font-light leading-none mb-2">
+                  <p className="font-display text-7xl text-[#CCCCCC] font-light leading-none mb-2">
                     {pillar.kanji}
                   </p>
-                  <p className="text-xs tracking-[0.2em] text-[#8888AA] uppercase">{pillar.en}</p>
+                  <p className="text-xs tracking-[0.2em] text-[#888888] uppercase">{pillar.en}</p>
                 </div>
                 <div>
                   <h2 className="font-display text-3xl font-light mb-2">{pillar.name}</h2>
-                  <p className="text-xs text-[#8B7FCC] tracking-wider mb-5">{pillar.theme}</p>
-                  <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-6">{pillar.desc}</p>
-                  <div className="bg-[#1A1F35] p-4">
-                    <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-2 uppercase">Self-reflection</p>
-                    <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider italic">{pillar.selfQuestion}</p>
+                  <p className="text-xs text-[#111111] tracking-wider mb-5">{pillar.theme}</p>
+                  <p className="text-sm text-[#555555] leading-loose tracking-wider mb-6">{pillar.desc}</p>
+                  <div className="bg-[#EAEAE6] p-4">
+                    <p className="text-xs tracking-[0.2em] text-[#888888] mb-2 uppercase">Self-reflection</p>
+                    <p className="text-sm text-[#555555] leading-loose tracking-wider italic">{pillar.selfQuestion}</p>
                   </div>
                 </div>
               </div>
@@ -118,9 +118,9 @@ export default function PillarsPage() {
         </div>
 
         {/* Note on day master */}
-        <div className="mt-12 border border-[#2A2F52] p-8">
-          <p className="text-xs tracking-[0.2em] text-[#8B7FCC] mb-3 uppercase">Key Point — 日主について</p>
-          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">
+        <div className="mt-12 border border-[#D0CCC4] p-8">
+          <p className="text-xs tracking-[0.2em] text-[#111111] mb-3 uppercase">Key Point — 日主について</p>
+          <p className="text-sm text-[#555555] leading-loose tracking-wider">
             四柱推命で最も重要なのが「日主（にっしゅ）」——日柱の天干。
             命式全体は「日主がどんな状況にあるか」という視点で読み解く。
             日主が旺盛か（強い状態か）、衰弱か（弱い状態か）で、同じ星が出ていても意味が変わる。

@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-space: #09090F;
-  --color-surface: #0E1020;
-  --color-border: #1A1F35;
-  --color-text: #E8E5F5;
-  --color-muted: #8888AA;
-  --color-accent: #8B7FCC;
-  --color-accent-light: #C4B8F0;
+  --color-space: #F9F9F7;
+  --color-surface: #F4F4F2;
+  --color-border: #E0DDD6;
+  --color-text: #111111;
+  --color-muted: #888888;
+  --color-accent: #111111;
   --font-display: var(--font-cormorant);
   --font-body: var(--font-noto);
 }
@@ -17,8 +16,8 @@ html {
 }
 
 body {
-  background-color: #09090F;
-  color: #E8E5F5;
+  background-color: #F9F9F7;
+  color: #111111;
   font-family: var(--font-body), "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -28,53 +27,21 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background-color: #8B7FCC;
-  color: #E8E5F5;
+  background-color: #111111;
+  color: #F9F9F7;
 }
 
-/* Star field — three tiling layers of tiny dots */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.9) 0.5px, transparent 0.5px) 0 0 / 80px 80px,
-    radial-gradient(circle, rgba(200,190,255,0.65) 0.8px, transparent 0.8px) 40px 20px / 120px 120px,
-    radial-gradient(circle, rgba(255,255,255,0.45) 0.5px, transparent 0.5px) 20px 60px / 160px 160px,
-    radial-gradient(circle, rgba(255,255,255,0.75) 1px, transparent 1px) 70px 10px / 220px 220px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Nebula glow — soft ambient colour washes */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 15% 40%, rgba(100,60,180,0.09) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 20%, rgba(60,80,180,0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(80,40,140,0.07) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Star twinkle animation */
 @keyframes twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.3); }
+  0%, 100% { opacity: 1;    transform: scale(1); }
+  40%       { opacity: 0.08; transform: scale(0.6); }
+  70%       { opacity: 0.6;  transform: scale(1.1); }
 }
 
-.star-tip {
-  animation: twinkle 1.2s ease-in-out infinite;
-  display: inline-block;
-}
-
-/* Calculator result fade-in */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out;
 }

@@ -26,13 +26,13 @@ export default function AstrologyPage() {
   return (
     <>
       {/* Page header */}
-      <div className="border-b border-[#1A1F35]">
+      <div className="border-b border-[#E0DDD6]">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#8888AA] mb-4 uppercase">01 — Western Astrology</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#E8E5F5] mb-6">
+          <p className="text-xs tracking-[0.3em] text-[#888888] mb-4 uppercase">01 — Western Astrology</p>
+          <h1 className="font-display text-5xl md:text-7xl font-light text-[#111111] mb-6">
             西洋占星術
           </h1>
-          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
             紀元前から続く西洋占星術は、惑星の位置と運動をもとに人間の心理・才能・運命のパターンを読み解く体系。
             「生まれた瞬間の空の配置」は、あなたという人間の設計図だ。
           </p>
@@ -44,21 +44,21 @@ export default function AstrologyPage() {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-display italic text-[#B8AEED] text-lg mb-4">overview</p>
+              <p className="font-display italic text-[#888888] text-lg mb-4">overview</p>
               <h2 className="font-display text-4xl font-light mb-6">占星術とは何か</h2>
-              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#555555] leading-loose tracking-wider mb-4">
                 西洋占星術では、生まれた日時・場所をもとに「ホロスコープ（出生図）」を作成する。
                 ホロスコープとは、生まれた瞬間の惑星配置を円形の図に落とし込んだもの。
                 太陽・月を含む10天体が、12星座のどこに位置し、12ハウスのどこに入っているかを読むことで、
                 その人の本質・思考パターン・感情の動き・才能・課題が浮かび上がる。
               </p>
-              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">
+              <p className="text-sm text-[#555555] leading-loose tracking-wider">
                 重要なのは「当たる・当たらない」ではなく、自分の傾向を客観視するツールとして使うこと。
                 自分の強みと弱みを知ることで、より意識的な選択ができるようになる。
               </p>
             </div>
-            <div className="bg-[#1A1F35] p-8">
-              <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-6 uppercase">Key Elements</p>
+            <div className="bg-[#EAEAE6] p-8">
+              <p className="text-xs tracking-[0.2em] text-[#888888] mb-6 uppercase">Key Elements</p>
               <ul className="space-y-4">
                 {[
                   { term: "惑星", desc: "何を（テーマ・欲求）" },
@@ -68,10 +68,10 @@ export default function AstrologyPage() {
                   { term: "アセンダント", desc: "外側への見せ方・入り口（上昇宮）" },
                 ].map((item) => (
                   <li key={item.term} className="flex gap-4 items-baseline">
-                    <span className="font-display text-[#8B7FCC] text-lg font-light w-28 shrink-0">
+                    <span className="font-display text-[#111111] text-lg font-light w-28 shrink-0">
                       {item.term}
                     </span>
-                    <span className="text-xs text-[#8888AA] tracking-wider">{item.desc}</span>
+                    <span className="text-xs text-[#888888] tracking-wider">{item.desc}</span>
                   </li>
                 ))}
               </ul>
@@ -82,16 +82,16 @@ export default function AstrologyPage() {
         {/* Three main axes */}
         <section className="mb-20">
           <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#1A1F35]" />
-            <span className="font-display italic text-[#B8AEED] text-sm">three luminaries</span>
-            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
+            <span className="font-display italic text-[#888888] text-sm">three luminaries</span>
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
           </div>
 
           <h2 className="font-display text-4xl font-light mb-10 text-center">
             読み解きの三本軸
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1A1F35]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EAEAE6]">
             {[
               {
                 symbol: "☉",
@@ -112,11 +112,11 @@ export default function AstrologyPage() {
                 desc: "他者への第一印象・人生への入り口・外に見せるペルソナ。「あなたはこう見える」。",
               },
             ].map((item) => (
-              <div key={item.name} className="bg-[#0E1020] p-8 text-center">
-                <p className="font-display text-5xl text-[#B8AEED] mb-4">{item.symbol}</p>
-                <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-1 uppercase">{item.en}</p>
+              <div key={item.name} className="bg-[#F4F4F2] p-8 text-center">
+                <p className="font-display text-5xl text-[#888888] mb-4">{item.symbol}</p>
+                <p className="text-xs tracking-[0.2em] text-[#888888] mb-1 uppercase">{item.en}</p>
                 <h3 className="font-display text-2xl font-light mb-4">{item.name}</h3>
-                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{item.desc}</p>
+                <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -125,19 +125,19 @@ export default function AstrologyPage() {
         {/* DSC & MC */}
         <section className="mb-20">
           <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#1A1F35]" />
-            <span className="font-display italic text-[#B8AEED] text-sm">angles</span>
-            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
+            <span className="font-display italic text-[#888888] text-sm">angles</span>
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
           </div>
 
           <h2 className="font-display text-4xl font-light mb-4 text-center">
             もう二つのアングル
           </h2>
-          <p className="text-sm text-[#8888AA] text-center mb-10 tracking-wider">
+          <p className="text-sm text-[#888888] text-center mb-10 tracking-wider">
             アセンダント（AC）と対をなす二つの軸。チャート読みの解像度を上げる。
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
             {[
               {
                 symbol: "DC",
@@ -152,15 +152,15 @@ export default function AstrologyPage() {
                 desc: "第10ハウスのカスプ。社会的な方向性・キャリア・公の自己像を示す軸。「世の中でどう生きるか」「何者として認識されたいか」という問いへの答え。人生の中盤以降に強く現れてくることが多い。",
               },
             ].map((item) => (
-              <div key={item.name} className="bg-[#0E1020] p-8">
+              <div key={item.name} className="bg-[#F4F4F2] p-8">
                 <div className="flex items-baseline gap-4 mb-4">
-                  <p className="font-display text-4xl text-[#B8AEED] font-light">{item.symbol}</p>
+                  <p className="font-display text-4xl text-[#888888] font-light">{item.symbol}</p>
                   <div>
-                    <p className="text-xs tracking-[0.2em] text-[#8888AA] uppercase">{item.en}</p>
+                    <p className="text-xs tracking-[0.2em] text-[#888888] uppercase">{item.en}</p>
                     <h3 className="font-display text-2xl font-light">{item.name}</h3>
                   </div>
                 </div>
-                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{item.desc}</p>
+                <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -169,18 +169,18 @@ export default function AstrologyPage() {
         {/* Sub-pages */}
         <section>
           <h2 className="font-display text-3xl font-light mb-8">さらに深く学ぶ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
             {subPages.map((page) => (
               <Link
                 key={page.href}
                 href={page.href}
-                className="group bg-[#0E1020] p-8 hover:bg-[#1A1F35] transition-colors duration-300 block"
+                className="group bg-[#F4F4F2] p-8 hover:bg-[#EAEAE6] transition-colors duration-300 block"
               >
-                <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-2 uppercase">{page.titleEn}</p>
-                <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#8B7FCC] transition-colors">
-                  {page.title} <span className="text-[#B8AEED]">→</span>
+                <p className="text-xs tracking-[0.2em] text-[#888888] mb-2 uppercase">{page.titleEn}</p>
+                <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#111111] transition-colors">
+                  {page.title} <span className="text-[#888888]">→</span>
                 </h3>
-                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{page.desc}</p>
+                <p className="text-sm text-[#555555] leading-loose tracking-wider">{page.desc}</p>
               </Link>
             ))}
           </div>

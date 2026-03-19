@@ -103,17 +103,17 @@ const categories = [
 export default function StarsPage() {
   return (
     <>
-      <div className="border-b border-[#1A1F35]">
+      <div className="border-b border-[#E0DDD6]">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#8888AA] tracking-wider mb-4">
-            <Link href="/shichusuimei" className="hover:text-[#8B7FCC] transition-colors">四柱推命</Link>
+          <div className="flex items-center gap-2 text-xs text-[#888888] tracking-wider mb-4">
+            <Link href="/shichusuimei" className="hover:text-[#111111] transition-colors">四柱推命</Link>
             <span>/</span>
             <span>十干・十二支と星の意味</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#E8E5F5] mb-4">
+          <h1 className="font-display text-5xl md:text-6xl font-light text-[#111111] mb-4">
             十干・通変星
           </h1>
-          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
             四柱推命の解読には、十干（天干）の性質と、
             日主との関係から生まれる「通変星（つうへんせい）」の理解が欠かせない。
             10の通変星が命式のどこにどのように現れるかで、才能・性格・仕事運が浮かび上がる。
@@ -125,17 +125,17 @@ export default function StarsPage() {
         {/* Ten Stems */}
         <section className="mb-20">
           <h2 className="font-display text-4xl font-light mb-2">十干</h2>
-          <p className="text-sm text-[#8888AA] mb-8 tracking-wider">Ten Heavenly Stems</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
+          <p className="text-sm text-[#888888] mb-8 tracking-wider">Ten Heavenly Stems</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
             {stems.map((s) => (
-              <div key={s.stem} className="bg-[#0E1020] p-6 flex gap-6">
+              <div key={s.stem} className="bg-[#F4F4F2] p-6 flex gap-6">
                 <div className="text-center shrink-0 w-16">
-                  <p className="font-display text-4xl text-[#B8AEED] font-light">{s.stem}</p>
-                  <p className="text-xs text-[#8888AA] mt-1 tracking-wider">{s.reading}</p>
+                  <p className="font-display text-4xl text-[#888888] font-light">{s.stem}</p>
+                  <p className="text-xs text-[#888888] mt-1 tracking-wider">{s.reading}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#8B7FCC] tracking-wider mb-2">{s.element}</p>
-                  <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{s.nature}</p>
+                  <p className="text-xs text-[#111111] tracking-wider mb-2">{s.element}</p>
+                  <p className="text-sm text-[#555555] leading-loose tracking-wider">{s.nature}</p>
                 </div>
               </div>
             ))}
@@ -145,20 +145,20 @@ export default function StarsPage() {
         {/* Star categories overview */}
         <section className="mb-12">
           <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#1A1F35]" />
-            <span className="font-display italic text-[#B8AEED] text-sm">ten stars</span>
-            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
+            <span className="font-display italic text-[#888888] text-sm">ten stars</span>
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
           </div>
           <h2 className="font-display text-4xl font-light mb-2">通変星（十神）</h2>
-          <p className="text-sm text-[#8888AA] mb-8 tracking-wider">
+          <p className="text-sm text-[#888888] mb-8 tracking-wider">
             日主と他の天干との関係から生まれる10の星。命式中の星の構成で、才能・性格・運の傾向が分かる。
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-[#1A1F35] mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-[#EAEAE6] mb-12">
             {categories.map((cat) => (
-              <div key={cat.name} className="bg-[#0E1020] p-5 text-center">
-                <p className="text-xs text-[#8B7FCC] tracking-wider mb-2">{cat.stars.join(" / ")}</p>
+              <div key={cat.name} className="bg-[#F4F4F2] p-5 text-center">
+                <p className="text-xs text-[#111111] tracking-wider mb-2">{cat.stars.join(" / ")}</p>
                 <p className="font-display text-sm font-light leading-snug mb-2">{cat.name}</p>
-                <p className="text-xs text-[#8888AA] tracking-wider">{cat.desc}</p>
+                <p className="text-xs text-[#888888] tracking-wider">{cat.desc}</p>
               </div>
             ))}
           </div>
@@ -166,20 +166,20 @@ export default function StarsPage() {
 
         {/* Each star */}
         <section>
-          <div className="space-y-px bg-[#1A1F35]">
+          <div className="space-y-px bg-[#EAEAE6]">
             {stars.map((star) => (
-              <div key={star.name} className="bg-[#0E1020] p-8">
+              <div key={star.name} className="bg-[#F4F4F2] p-8">
                 <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-6">
                   <div>
-                    <p className="font-display text-3xl font-light text-[#E8E5F5] mb-1">{star.name}</p>
-                    <p className="text-xs text-[#8888AA] tracking-wider mb-1">{star.en}</p>
-                    <span className="inline-block text-xs border border-[#2A2F52] text-[#8888AA] px-2 py-0.5 tracking-wider">
+                    <p className="font-display text-3xl font-light text-[#111111] mb-1">{star.name}</p>
+                    <p className="text-xs text-[#888888] tracking-wider mb-1">{star.en}</p>
+                    <span className="inline-block text-xs border border-[#D0CCC4] text-[#888888] px-2 py-0.5 tracking-wider">
                       {star.category}
                     </span>
                   </div>
                   <div>
-                    <p className="text-xs text-[#8B7FCC] tracking-wider mb-3">{star.keyword}</p>
-                    <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{star.desc}</p>
+                    <p className="text-xs text-[#111111] tracking-wider mb-3">{star.keyword}</p>
+                    <p className="text-sm text-[#555555] leading-loose tracking-wider">{star.desc}</p>
                   </div>
                 </div>
               </div>

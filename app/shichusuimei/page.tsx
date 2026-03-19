@@ -25,13 +25,13 @@ const subPages = [
 export default function ShichusuimeiPage() {
   return (
     <>
-      <div className="border-b border-[#1A1F35]">
+      <div className="border-b border-[#E0DDD6]">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#8888AA] mb-4 uppercase">02 — Four Pillars of Destiny</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#E8E5F5] mb-6">
+          <p className="text-xs tracking-[0.3em] text-[#888888] mb-4 uppercase">02 — Four Pillars of Destiny</p>
+          <h1 className="font-display text-5xl md:text-7xl font-light text-[#111111] mb-6">
             四柱推命
           </h1>
-          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg">
             中国数千年の歴史を持つ命理学。生まれた年・月・日・時刻の四つの柱と、
             十干・十二支・五行の組み合わせから命式を読み解く。
             運命を「当てる」のではなく、先天的な資質と後天的な流れを「知る」ための体系。
@@ -44,24 +44,24 @@ export default function ShichusuimeiPage() {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-display italic text-[#B8AEED] text-lg mb-4">overview</p>
+              <p className="font-display italic text-[#888888] text-lg mb-4">overview</p>
               <h2 className="font-display text-4xl font-light mb-6">四柱推命とは</h2>
-              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#555555] leading-loose tracking-wider mb-4">
                 四柱推命（しちゅうすいめい）とは、生年月日時を「年柱・月柱・日柱・時柱」の四つの柱に変換し、
                 それぞれに十干（甲乙丙丁…）と十二支（子丑寅卯…）を配置して命式を作る占術。
                 この命式は「その人という木（日主）が、どんな環境（季節・気候）に生まれたか」を示す地図だ。
               </p>
-              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#555555] leading-loose tracking-wider mb-4">
                 四柱推命の特徴は、その人の「気質・資質・弱点・才能」という先天的な要素と、
                 「大運・流年」という時間の流れ（後天的な運気）を同時に読める点にある。
                 西洋占星術が空間（惑星配置）を重視するのに対し、四柱推命は時間（生まれた時刻）を起点にする。
               </p>
-              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">
+              <p className="text-sm text-[#555555] leading-loose tracking-wider">
                 なお「時柱」は正確な出生時刻が必要になるため、時刻が不明な場合は年・月・日の三柱で読むこともある。
               </p>
             </div>
-            <div className="bg-[#0D1028] text-[#E8E5F5] p-8">
-              <p className="text-xs tracking-[0.2em] text-[#B8AEED] mb-6 uppercase">Five Elements — 五行</p>
+            <div className="bg-[#111111] text-[#F9F9F7] p-8">
+              <p className="text-xs tracking-[0.2em] text-[#888888] mb-6 uppercase">Five Elements — 五行</p>
               <div className="space-y-3">
                 {[
                   { element: "木 (Wood)", trait: "成長・柔軟・上昇志向", visual: "wood" as const },
@@ -73,8 +73,8 @@ export default function ShichusuimeiPage() {
                   <div key={item.element} className="flex gap-4 items-center border-b border-[#1E2240] pb-3 last:border-0 last:pb-0">
                     <ElementVisual element={item.visual} />
                     <div>
-                      <span className="font-display text-[#B8AEED] text-lg block leading-tight">{item.element}</span>
-                      <span className="text-xs text-[#8888AA] tracking-wider">{item.trait}</span>
+                      <span className="font-display text-[#888888] text-lg block leading-tight">{item.element}</span>
+                      <span className="text-xs text-[#888888] tracking-wider">{item.trait}</span>
                     </div>
                   </div>
                 ))}
@@ -86,12 +86,12 @@ export default function ShichusuimeiPage() {
         {/* What you can know */}
         <section className="mb-20">
           <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#1A1F35]" />
-            <span className="font-display italic text-[#B8AEED] text-sm">what you can know</span>
-            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
+            <span className="font-display italic text-[#888888] text-sm">what you can know</span>
+            <div className="flex-1 h-px bg-[#EAEAE6]" />
           </div>
           <h2 className="font-display text-4xl font-light mb-10 text-center">四柱推命で分かること</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1A1F35]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EAEAE6]">
             {[
               {
                 title: "先天的な気質",
@@ -106,9 +106,9 @@ export default function ShichusuimeiPage() {
                 desc: "10年ごとに変わる「大運」と年ごとの「流年」が、いつ追い風が吹き、いつ内側を固める時期かを示す。時代を読んで動くための羅針盤になる。",
               },
             ].map((item) => (
-              <div key={item.title} className="bg-[#0E1020] p-8">
-                <h3 className="font-display text-xl font-light mb-4 text-[#8B7FCC]">{item.title}</h3>
-                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{item.desc}</p>
+              <div key={item.title} className="bg-[#F4F4F2] p-8">
+                <h3 className="font-display text-xl font-light mb-4 text-[#111111]">{item.title}</h3>
+                <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -117,18 +117,18 @@ export default function ShichusuimeiPage() {
         {/* Sub-pages */}
         <section>
           <h2 className="font-display text-3xl font-light mb-8">さらに深く学ぶ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
             {subPages.map((page) => (
               <Link
                 key={page.href}
                 href={page.href}
-                className="group bg-[#0E1020] p-8 hover:bg-[#1A1F35] transition-colors duration-300 block"
+                className="group bg-[#F4F4F2] p-8 hover:bg-[#EAEAE6] transition-colors duration-300 block"
               >
-                <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-2 uppercase">{page.titleEn}</p>
-                <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#8B7FCC] transition-colors">
-                  {page.title} <span className="text-[#B8AEED]">→</span>
+                <p className="text-xs tracking-[0.2em] text-[#888888] mb-2 uppercase">{page.titleEn}</p>
+                <h3 className="font-display text-2xl font-light mb-3 group-hover:text-[#111111] transition-colors">
+                  {page.title} <span className="text-[#888888]">→</span>
                 </h3>
-                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{page.desc}</p>
+                <p className="text-sm text-[#555555] leading-loose tracking-wider">{page.desc}</p>
               </Link>
             ))}
           </div>

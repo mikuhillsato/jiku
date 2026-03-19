@@ -32,43 +32,44 @@ export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="relative z-50 border-b border-[#1A1F35] bg-[#0E1020]/90 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 border-b border-[#111111] bg-[#F9F9F7]/95 backdrop-blur-sm">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-[52px]">
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-2xl tracking-[0.2em] text-[#E8E5F5] hover:text-[#8B7FCC] transition-colors"
+          className="font-display text-[17px] tracking-[0.25em] uppercase text-[#111111] hover:opacity-60 transition-opacity"
         >
           MyJiku
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {nav.map((item) => (
+          {nav.map((item, i) => (
             <div
               key={item.href}
               className="relative group"
               onMouseEnter={() => setOpenDropdown(item.href)}
               onMouseLeave={() => setOpenDropdown(null)}
             >
+              {i > 0 && <span className="absolute -left-4 top-1/2 -translate-y-1/2 text-[#CCC] text-xs pointer-events-none">·</span>}
               <Link
                 href={item.href}
-                className={`text-sm tracking-wider transition-colors py-2 ${
+                className={`text-[9px] tracking-[0.3em] uppercase transition-opacity py-2 ${
                   pathname.startsWith(item.href)
-                    ? "text-[#8B7FCC]"
-                    : "text-[#8888AA] hover:text-[#E8E5F5]"
+                    ? "text-[#111111]"
+                    : "text-[#888888] hover:text-[#111111]"
                 }`}
               >
                 {item.label}
               </Link>
               {item.sub.length > 0 && openDropdown === item.href && (
                 <div className="absolute top-full left-0 pt-2 w-52">
-                  <div className="bg-[#0E1020] border border-[#1A1F35] shadow-sm py-2">
+                  <div className="bg-[#F9F9F7] border border-[#E0DDD6] shadow-sm py-2">
                     {item.sub.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="block px-4 py-2 text-xs tracking-wider text-[#8888AA] hover:text-[#E8E5F5] hover:bg-[#1A1F35] transition-colors"
+                        className="block px-4 py-2 text-[9px] tracking-wider text-[#888888] hover:text-[#111111] hover:bg-[#F4F4F2] transition-colors"
                       >
                         {s.label}
                       </Link>
@@ -82,33 +83,27 @@ export default function Navigation() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#E8E5F5]"
+          className="md:hidden text-[#111111]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="メニューを開く"
         >
           <div className="space-y-1.5">
-            <span
-              className={`block w-6 h-px bg-current transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-            />
-            <span
-              className={`block w-6 h-px bg-current transition-opacity ${menuOpen ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`block w-6 h-px bg-current transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-            />
+            <span className={`block w-6 h-px bg-current transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-px bg-current transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-px bg-current transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </div>
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-[#1A1F35] bg-[#0E1020]">
+        <div className="md:hidden border-t border-[#E0DDD6] bg-[#F9F9F7]">
           {nav.map((item) => (
             <div key={item.href}>
               <Link
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-6 py-3 text-sm tracking-wider text-[#E8E5F5] border-b border-[#1A1F35]"
+                className="block px-6 py-3 text-[9px] tracking-[0.3em] uppercase text-[#111111] border-b border-[#E0DDD6]"
               >
                 {item.label}
               </Link>
@@ -117,7 +112,7 @@ export default function Navigation() {
                   key={s.href}
                   href={s.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-10 py-2 text-xs tracking-wider text-[#8888AA] border-b border-[#1A1F35]"
+                  className="block px-10 py-2 text-[9px] tracking-wider text-[#888888] border-b border-[#E0DDD6]"
                 >
                   {s.label}
                 </Link>
