@@ -43,6 +43,16 @@ body::before {
   opacity: 0.5;
 }
 
+/* Star twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+  50% { opacity: 0.6; transform: translateY(-50%) scale(1.3); }
+}
+
+.star-tip {
+  animation: twinkle 1s ease-in-out infinite;
+}
+
 /* Divider line with middle ornament */
 .ornament-divider {
   display: flex;
