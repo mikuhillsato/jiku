@@ -191,38 +191,45 @@ export default function Home() {
       <ParallaxBand />
 
       {/* CTA FORM */}
-      <div className="bg-[#111111] px-6 md:px-12 py-12 md:py-16 border-b border-[#222]">
-        <p className="text-[8px] tracking-[0.5em] uppercase text-[#444444] mb-5">Integrated Reading</p>
+      <div className="bg-[#111111] px-6 md:px-12 py-12 md:py-16 border-b border-[#2A2A2A]">
+        <p className="text-[8px] tracking-[0.5em] uppercase text-[#666666] mb-5">Integrated Reading</p>
         <h2 className="font-display text-3xl md:text-4xl font-light text-[#F9F9F7] mb-3 leading-tight">
           生年月日を入れて、<br className="md:hidden" />
           才能を知る。
         </h2>
-        <p className="text-[11px] text-[#555555] tracking-wider mb-8 max-w-md leading-loose">
+        <p className="text-[11px] text-[#999999] tracking-wider mb-8 max-w-md leading-loose">
           西洋占星術・数秘術・九星気学の三つを一括計算。統合した視点であなたの才能の核心を読み解く。
         </p>
         <form action="/diagnosis" method="get">
-          <div className="flex flex-col md:flex-row gap-3 items-start md:items-end mb-4 flex-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5 max-w-2xl">
             <div>
-              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#444] mb-2">生年月日</label>
+              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">名前（アルファベット）</label>
               <input
-                type="date" name="date" required
-                className="border border-[#2A2A2A] bg-transparent text-[#F9F9F7] px-4 py-2.5 text-sm focus:outline-none focus:border-[#666] w-full md:w-auto"
+                type="text" name="name" required placeholder="例: Miku Sato"
+                className="border border-[#444444] bg-transparent text-[#F9F9F7] placeholder:text-[#555555] px-4 py-2.5 text-sm focus:outline-none focus:border-[#888] w-full"
               />
             </div>
             <div>
-              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#444] mb-2">
-                出生時刻 <span className="text-[#333] normal-case tracking-normal">（任意 — 月星座・金星に必要）</span>
+              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">生年月日</label>
+              <input
+                type="date" name="date" required
+                className="border border-[#444444] bg-transparent text-[#F9F9F7] px-4 py-2.5 text-sm focus:outline-none focus:border-[#888] w-full"
+              />
+            </div>
+            <div>
+              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">
+                出生時刻 <span className="text-[#555555] normal-case tracking-normal">（任意 — 月星座・金星に必要）</span>
               </label>
               <input
                 type="time" name="time"
-                className="border border-[#2A2A2A] bg-transparent text-[#F9F9F7] px-4 py-2.5 text-sm focus:outline-none focus:border-[#666] w-full md:w-auto"
+                className="border border-[#444444] bg-transparent text-[#F9F9F7] px-4 py-2.5 text-sm focus:outline-none focus:border-[#888] w-full"
               />
             </div>
             <div>
-              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#444] mb-2">タイムゾーン</label>
+              <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">タイムゾーン</label>
               <select
                 name="tz"
-                className="border border-[#2A2A2A] bg-[#111111] text-[#F9F9F7] px-4 py-2.5 text-sm focus:outline-none focus:border-[#666] w-full md:w-auto"
+                className="border border-[#444444] bg-[#111111] text-[#F9F9F7] px-4 py-2.5 text-sm focus:outline-none focus:border-[#888] w-full"
               >
                 <option value="+09:00">JST（東京・大阪）</option>
                 <option value="+08:00">CST（上海・北京）</option>
@@ -239,14 +246,13 @@ export default function Home() {
                 <option value="+11:00">AEDT（シドニー夏）</option>
               </select>
             </div>
-            <button
-              type="submit"
-              className="bg-[#F9F9F7] text-[#111111] px-8 py-2.5 text-[9px] tracking-[0.3em] uppercase hover:bg-[#E0DDD6] transition-colors shrink-0"
-            >
-              才能を鑑定する →
-            </button>
           </div>
-          <p className="text-[9px] text-[#333333] tracking-wide">名前（数秘術の計算用）は次のページで入力できます</p>
+          <button
+            type="submit"
+            className="bg-[#F9F9F7] text-[#111111] px-8 py-3 text-[9px] tracking-[0.3em] uppercase hover:bg-[#E0DDD6] transition-colors"
+          >
+            才能を鑑定する →
+          </button>
         </form>
       </div>
 

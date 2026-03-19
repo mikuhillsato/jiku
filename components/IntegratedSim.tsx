@@ -215,9 +215,49 @@ export default function IntegratedSim() {
     const d = searchParams.get("date");
     const t = searchParams.get("time");
     const z = searchParams.get("tz");
+    const n = searchParams.get("name");
     if (d) setDate(d);
     if (t) setTime(t);
     if (z) setTz(z);
+    if (n) setName(n);
+
+    // 全項目揃っていれば自動計算
+    if (d && n && /[a-zA-Z]/.test(n)) {
+      // state の更新を待つため microtask で実行
+      Promise.resolve().then(() => {
+        const [y, m, day] = d.split("-").map(Number);
+        const isBeforeSetsubun = m === 1 || (m === 2 && day <= 3);
+        const lp       = calcLP(d);
+        const soul     = calcName(n, c => VOWELS.has(c));
+        const dest     = calcName(n, () => true);
+        const pers     = calcName(n, c => !VOWELS.has(c));
+        const honmei   = calcHonmei(y, m, isBeforeSetsubun);
+        const getsumei = calcGetsumei(honmei, m, isBeforeSetsubun);
+        const sun      = getSunSign(m, day);
+
+        const doCalc = async () => {
+          let planets: PlanetSigns | undefined;
+          const timeVal = t || "";
+          const tzVal   = z || "+09:00";
+          if (timeVal) {
+            const Astronomy = await import("astronomy-engine");
+            const utcDate = new Date(`${d}T${timeVal}:00${tzVal}`);
+            const astroTime = Astronomy.MakeTime(utcDate);
+            const moonEcl    = Astronomy.EclipticGeoMoon(astroTime);
+            const venusEcl   = Astronomy.Ecliptic(Astronomy.GeoVector(Astronomy.Body.Venus, astroTime, false));
+            const jupiterEcl = Astronomy.Ecliptic(Astronomy.GeoVector(Astronomy.Body.Jupiter, astroTime, false));
+            planets = {
+              moon:    signFromLon(moonEcl.lon),
+              venus:   signFromLon(venusEcl.elon),
+              jupiter: signFromLon(jupiterEcl.elon),
+            };
+          }
+          const integration = buildIntegration(lp, soul || lp, honmei, getsumei, sun, planets?.moon);
+          setResult({ lp, soul, dest, pers, honmei, getsumei, sun, planets, integration });
+        };
+        doCalc();
+      });
+    }
   }, [searchParams]);
 
   async function calculate() {
