@@ -18,23 +18,18 @@ export default function ReadingProgress() {
   if (progress === 0) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] h-[2px] bg-transparent">
+    <div className="fixed top-0 left-0 right-0 z-[100] h-[3px] bg-transparent overflow-visible">
       {/* Progress bar */}
       <div
-        className="h-full bg-gradient-to-r from-[#8B5E3C] via-[#C4926A] to-[#C4926A] transition-all duration-100 ease-out relative"
+        className="h-full bg-gradient-to-r from-[#8B5E3C] via-[#C4926A] to-[#C4926A] transition-all duration-100 ease-out relative overflow-visible"
         style={{ width: `${progress}%` }}
       >
-        {/* Shooting star at the tip */}
+        {/* Saturn at the tip */}
         <div
-          className="absolute right-0 top-1/2 -translate-y-1/2"
-          style={{ filter: "drop-shadow(0 0 4px #C4926A) drop-shadow(0 0 8px #8B5E3C)" }}
+          className="absolute right-0 top-0 translate-x-1/2 -translate-y-[35%]"
+          style={{ filter: "drop-shadow(0 0 6px #C4926A)" }}
         >
-          {/* Star body */}
-          <div className="relative">
-            <span className="text-[14px] leading-none star-tip">🪐</span>
-            {/* Tail glow */}
-            <div className="absolute right-full top-1/2 -translate-y-1/2 w-6 h-[2px] bg-gradient-to-l from-[#C4926A] to-transparent opacity-80" />
-          </div>
+          <span className="text-[22px] leading-none star-tip block">🪐</span>
         </div>
       </div>
     </div>
