@@ -45,14 +45,14 @@ export default function Home() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-20">
         <div className="max-w-2xl">
-          <p className="text-xs tracking-[0.3em] text-[#8A7E75] mb-6 uppercase">
+          <p className="text-xs tracking-[0.3em] text-[#8888AA] mb-6 uppercase">
             Self-knowledge × Divination
           </p>
-          <h1 className="font-display text-6xl md:text-8xl font-light leading-none tracking-tight text-[#1A1714] mb-8">
+          <h1 className="font-display text-6xl md:text-8xl font-light leading-none tracking-tight text-[#E8E5F5] mb-8">
             星と命式が、<br />
-            <em className="not-italic text-[#8B5E3C]">羅針盤</em>になる。
+            <em className="not-italic text-[#8B7FCC]">羅針盤</em>になる。
           </h1>
-          <p className="text-sm text-[#3D3630] leading-loose tracking-wider max-w-md">
+          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-md">
             占術は未来を「当てる」ものではなく、自分を「知る」ツール。
             西洋占星術・四柱推命・数秘術・算命学の四つのレンズを通して、
             あなたの本質・才能・人生の流れを読み解く。
@@ -60,13 +60,13 @@ export default function Home() {
           <div className="mt-10 flex gap-4">
             <Link
               href="/astrology"
-              className="inline-block px-8 py-3 bg-[#1A1714] text-[#EFF0EB] text-xs tracking-[0.2em] hover:bg-[#8B5E3C] transition-colors duration-300"
+              className="inline-block px-8 py-3 bg-[#0D1028] text-[#E8E5F5] text-xs tracking-[0.2em] hover:bg-[#6B5BAE] transition-colors duration-300"
             >
               探索する
             </Link>
             <Link
               href="#systems"
-              className="inline-block px-8 py-3 border border-[#D6C5B0] text-[#8A7E75] text-xs tracking-[0.2em] hover:border-[#8B5E3C] hover:text-[#8B5E3C] transition-colors duration-300"
+              className="inline-block px-8 py-3 border border-[#2A2F52] text-[#8888AA] text-xs tracking-[0.2em] hover:border-[#8B7FCC] hover:text-[#8B7FCC] transition-colors duration-300"
             >
               占術を選ぶ
             </Link>
@@ -75,41 +75,41 @@ export default function Home() {
 
         {/* Decorative line */}
         <div className="mt-20 flex items-center gap-6">
-          <div className="flex-1 h-px bg-[#EAE4DC]" />
-          <span className="font-display italic text-[#C4926A] text-sm">four systems</span>
-          <div className="w-12 h-px bg-[#EAE4DC]" />
+          <div className="flex-1 h-px bg-[#1A1F35]" />
+          <span className="font-display italic text-[#B8AEED] text-sm">four systems</span>
+          <div className="w-12 h-px bg-[#1A1F35]" />
         </div>
       </section>
 
       {/* Systems Grid */}
       <section id="systems" className="max-w-6xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
           {systems.map((s) => (
             <Link
               key={s.href}
               href={s.href}
-              className="group bg-[#EFF0EB] p-10 hover:bg-[#EAE4DC] transition-colors duration-300 block"
+              className="group bg-[#0E1020] p-10 hover:bg-[#1A1F35] transition-colors duration-300 block"
             >
               <div className="flex justify-between items-start mb-6">
-                <span className="font-display text-5xl text-[#D6C5B0] group-hover:text-[#C4926A] transition-colors duration-300 font-light">
+                <span className="font-display text-5xl text-[#303860] group-hover:text-[#B8AEED] transition-colors duration-300 font-light">
                   {s.number}
                 </span>
-                <span className="text-xs text-[#8A7E75] tracking-widest mt-2 group-hover:text-[#8B5E3C] transition-colors">
+                <span className="text-xs text-[#8888AA] tracking-widest mt-2 group-hover:text-[#8B7FCC] transition-colors">
                   →
                 </span>
               </div>
-              <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">{s.titleEn}</p>
-              <h2 className="font-display text-3xl font-light mb-4 text-[#1A1714] group-hover:text-[#8B5E3C] transition-colors duration-300">
+              <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-2 uppercase">{s.titleEn}</p>
+              <h2 className="font-display text-3xl font-light mb-4 text-[#E8E5F5] group-hover:text-[#8B7FCC] transition-colors duration-300">
                 {s.title}
               </h2>
-              <p className="text-xs text-[#8A7E75] leading-relaxed tracking-wider mb-6">
+              <p className="text-xs text-[#8888AA] leading-relaxed tracking-wider mb-6">
                 {s.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {s.keywords.map((k) => (
                   <span
                     key={k}
-                    className="text-xs border border-[#D6C5B0] text-[#8A7E75] px-3 py-1 tracking-wider"
+                    className="text-xs border border-[#2A2F52] text-[#8888AA] px-3 py-1 tracking-wider"
                   >
                     {k}
                   </span>
@@ -121,15 +121,15 @@ export default function Home() {
       </section>
 
       {/* Philosophy section */}
-      <section className="bg-[#1A1714] text-[#EFF0EB] py-24">
+      <section className="bg-[#0D1028] text-[#E8E5F5] py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center">
-            <p className="font-display italic text-[#C4926A] text-lg mb-6">philosophy</p>
+            <p className="font-display italic text-[#B8AEED] text-lg mb-6">philosophy</p>
             <h3 className="font-display text-4xl font-light leading-snug mb-8">
               「知ること」は、<br />
               「選ぶこと」の始まり。
             </h3>
-            <p className="text-sm text-[#8A7E75] leading-loose tracking-wider">
+            <p className="text-sm text-[#8888AA] leading-loose tracking-wider">
               自分の先天的な資質を知れば、強みを活かした選択ができる。
               人生の流れを読めば、焦らず自分のタイミングで動ける。
               占術は、自分の人生を自分で設計するための地図だ。

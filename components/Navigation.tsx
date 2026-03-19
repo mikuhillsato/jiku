@@ -32,12 +32,12 @@ export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="relative z-50 border-b border-[#EAE4DC] bg-[#EFF0EB]/90 backdrop-blur-sm">
+    <header className="relative z-50 border-b border-[#1A1F35] bg-[#0E1020]/90 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-2xl tracking-[0.2em] text-[#1A1714] hover:text-[#8B5E3C] transition-colors"
+          className="font-display text-2xl tracking-[0.2em] text-[#E8E5F5] hover:text-[#8B7FCC] transition-colors"
         >
           SEIUN
         </Link>
@@ -55,20 +55,20 @@ export default function Navigation() {
                 href={item.href}
                 className={`text-sm tracking-wider transition-colors py-2 ${
                   pathname.startsWith(item.href)
-                    ? "text-[#8B5E3C]"
-                    : "text-[#8A7E75] hover:text-[#1A1714]"
+                    ? "text-[#8B7FCC]"
+                    : "text-[#8888AA] hover:text-[#E8E5F5]"
                 }`}
               >
                 {item.label}
               </Link>
               {item.sub.length > 0 && openDropdown === item.href && (
                 <div className="absolute top-full left-0 pt-2 w-52">
-                  <div className="bg-[#EFF0EB] border border-[#EAE4DC] shadow-sm py-2">
+                  <div className="bg-[#0E1020] border border-[#1A1F35] shadow-sm py-2">
                     {item.sub.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="block px-4 py-2 text-xs tracking-wider text-[#8A7E75] hover:text-[#1A1714] hover:bg-[#EAE4DC] transition-colors"
+                        className="block px-4 py-2 text-xs tracking-wider text-[#8888AA] hover:text-[#E8E5F5] hover:bg-[#1A1F35] transition-colors"
                       >
                         {s.label}
                       </Link>
@@ -82,7 +82,7 @@ export default function Navigation() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#1A1714]"
+          className="md:hidden text-[#E8E5F5]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="メニューを開く"
         >
@@ -102,13 +102,13 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-[#EAE4DC] bg-[#EFF0EB]">
+        <div className="md:hidden border-t border-[#1A1F35] bg-[#0E1020]">
           {nav.map((item) => (
             <div key={item.href}>
               <Link
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-6 py-3 text-sm tracking-wider text-[#1A1714] border-b border-[#EAE4DC]"
+                className="block px-6 py-3 text-sm tracking-wider text-[#E8E5F5] border-b border-[#1A1F35]"
               >
                 {item.label}
               </Link>
@@ -117,7 +117,7 @@ export default function Navigation() {
                   key={s.href}
                   href={s.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-10 py-2 text-xs tracking-wider text-[#8A7E75] border-b border-[#EAE4DC]"
+                  className="block px-10 py-2 text-xs tracking-wider text-[#8888AA] border-b border-[#1A1F35]"
                 >
                   {s.label}
                 </Link>

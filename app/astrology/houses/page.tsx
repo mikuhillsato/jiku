@@ -96,17 +96,17 @@ const houses = [
 export default function HousesPage() {
   return (
     <>
-      <div className="border-b border-[#EAE4DC]">
+      <div className="border-b border-[#1A1F35]">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#8A7E75] tracking-wider mb-4">
-            <Link href="/astrology" className="hover:text-[#8B5E3C] transition-colors">西洋占星術</Link>
+          <div className="flex items-center gap-2 text-xs text-[#8888AA] tracking-wider mb-4">
+            <Link href="/astrology" className="hover:text-[#8B7FCC] transition-colors">西洋占星術</Link>
             <span>/</span>
             <span>ハウスの意味</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#1A1714] mb-4">
+          <h1 className="font-display text-5xl md:text-6xl font-light text-[#E8E5F5] mb-4">
             ハウスの意味
           </h1>
-          <p className="text-sm text-[#3D3630] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
             ホロスコープは12の「ハウス（室）」に分割される。それぞれのハウスは人生の特定の領域を象徴し、
             どの惑星がどのハウスに入っているかで、その人がどの領域に強いエネルギーを持つかが分かる。
           </p>
@@ -114,18 +114,18 @@ export default function HousesPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
           {houses.map((house) => (
-            <div key={house.number} className="bg-[#EFF0EB] p-8">
+            <div key={house.number} className="bg-[#0E1020] p-8">
               <div className="flex gap-6 items-start">
-                <span className="font-display text-4xl text-[#D6C5B0] font-light shrink-0 w-12">
+                <span className="font-display text-4xl text-[#303860] font-light shrink-0 w-12">
                   {house.number}
                 </span>
                 <div>
-                  <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-1 uppercase">{house.en}</p>
+                  <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-1 uppercase">{house.en}</p>
                   <h2 className="font-display text-2xl font-light mb-1">{house.name}</h2>
-                  <p className="text-xs text-[#8B5E3C] tracking-wider mb-3">{house.keyword}</p>
-                  <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{house.desc}</p>
+                  <p className="text-xs text-[#8B7FCC] tracking-wider mb-3">{house.keyword}</p>
+                  <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{house.desc}</p>
                 </div>
               </div>
             </div>

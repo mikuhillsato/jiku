@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #EFF0EB;
-  --color-ink: #1A1714;
-  --color-earth: #8B5E3C;
-  --color-earth-light: #C4926A;
-  --color-sand: #D6C5B0;
-  --color-mist: #EAE4DC;
-  --color-muted: #8A7E75;
+  --color-space: #09090F;
+  --color-surface: #0E1020;
+  --color-border: #1A1F35;
+  --color-text: #E8E5F5;
+  --color-muted: #8888AA;
+  --color-accent: #8B7FCC;
+  --color-accent-light: #C4B8F0;
   --font-display: var(--font-cormorant);
   --font-body: var(--font-noto);
 }
@@ -17,8 +17,8 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
-  color: var(--color-ink);
+  background-color: #09090F;
+  color: #E8E5F5;
   font-family: var(--font-body), "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -28,42 +28,53 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background-color: var(--color-earth);
-  color: var(--color-cream);
+  background-color: #8B7FCC;
+  color: #E8E5F5;
 }
 
-/* Subtle grain texture overlay */
+/* Star field — three tiling layers of tiny dots */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.9) 0.5px, transparent 0.5px) 0 0 / 80px 80px,
+    radial-gradient(circle, rgba(200,190,255,0.65) 0.8px, transparent 0.8px) 40px 20px / 120px 120px,
+    radial-gradient(circle, rgba(255,255,255,0.45) 0.5px, transparent 0.5px) 20px 60px / 160px 160px,
+    radial-gradient(circle, rgba(255,255,255,0.75) 1px, transparent 1px) 70px 10px / 220px 220px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.5;
+}
+
+/* Nebula glow — soft ambient colour washes */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 40%, rgba(100,60,180,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(60,80,180,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(80,40,140,0.07) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Star twinkle animation */
 @keyframes twinkle {
-  0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
-  50% { opacity: 0.6; transform: translateY(-50%) scale(1.3); }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
 }
 
 .star-tip {
-  animation: twinkle 1s ease-in-out infinite;
+  animation: twinkle 1.2s ease-in-out infinite;
+  display: inline-block;
 }
 
-/* Divider line with middle ornament */
-.ornament-divider {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: var(--color-sand);
+/* Calculator result fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.ornament-divider::before,
-.ornament-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--color-sand);
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
 }

@@ -21,13 +21,13 @@ const tenGods = [
 export default function SanmeigakuPage() {
   return (
     <>
-      <div className="border-b border-[#EAE4DC]">
+      <div className="border-b border-[#1A1F35]">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#8A7E75] mb-4 uppercase">04 — Sanmeigaku</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#1A1714] mb-6">
+          <p className="text-xs tracking-[0.3em] text-[#8888AA] mb-4 uppercase">04 — Sanmeigaku</p>
+          <h1 className="font-display text-5xl md:text-7xl font-light text-[#E8E5F5] mb-6">
             算命学
           </h1>
-          <p className="text-sm text-[#3D3630] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
             中国の陰陽五行思想をベースに、日本で独自に発展した命理学。
             天干・地支・守護神の概念を組み合わせ、その人の先天的な気質と後天的な運の流れを立体的に読み解く。
             四柱推命と似て非なる、日本独自の占術体系。
@@ -40,26 +40,26 @@ export default function SanmeigakuPage() {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-display italic text-[#C4926A] text-lg mb-4">overview</p>
+              <p className="font-display italic text-[#B8AEED] text-lg mb-4">overview</p>
               <h2 className="font-display text-4xl font-light mb-6">算命学とは</h2>
-              <p className="text-sm text-[#3D3630] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
                 算命学（さんめいがく）は、中国から伝来した命理学をもとに、日本で体系化された占術。
                 生年月日から「天干・地支」を取り出し、10個の「宿命星（ほし）」を導く点で四柱推命と似ているが、
                 算命学独自の「守護神」「位相法」「陰陽調和」などの概念を持ち、異なる体系として発展した。
               </p>
-              <p className="text-sm text-[#3D3630] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
                 算命学の大きな特徴は「守護神」の概念。命式のバランスを整えるために必要な五行の「神」を特定し、
                 それを意識した生き方をすることで運が整うとされる。
                 言わば「自分の命式に足りないものを外から補う」という発想だ。
               </p>
-              <p className="text-sm text-[#3D3630] leading-loose tracking-wider">
+              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">
                 また「陰占（いんせん）」と「陽占（ようせん）」の二つの側面から命式を読む点も特徴的。
                 陰占が先天的な宿命の骨格を示し、陽占の宿命星・位相法が具体的な気質と人間関係のパターンを示す。
               </p>
             </div>
             <div>
-              <div className="bg-[#EAE4DC] p-8 mb-4">
-                <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-4 uppercase">Structure</p>
+              <div className="bg-[#1A1F35] p-8 mb-4">
+                <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-4 uppercase">Structure</p>
                 <div className="space-y-3">
                   {[
                     { term: "陰占（いんせん）", desc: "天干・地支による命式の骨格。先天的な宿命の枠組み。" },
@@ -67,9 +67,9 @@ export default function SanmeigakuPage() {
                     { term: "守護神（しゅごじん）", desc: "命式のバランスを整える五行の「鍵」。意識することで運が整う。" },
                     { term: "位相法（いそうほう）", desc: "十二支同士の関係性（合・冲・害など）が示す人間関係のパターン。" },
                   ].map((item) => (
-                    <div key={item.term} className="border-b border-[#D6C5B0] pb-3 last:border-0 last:pb-0">
-                      <p className="text-sm font-display text-[#8B5E3C] mb-1">{item.term}</p>
-                      <p className="text-xs text-[#8A7E75] tracking-wider">{item.desc}</p>
+                    <div key={item.term} className="border-b border-[#2A2F52] pb-3 last:border-0 last:pb-0">
+                      <p className="text-sm font-display text-[#8B7FCC] mb-1">{item.term}</p>
+                      <p className="text-xs text-[#8888AA] tracking-wider">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -81,13 +81,13 @@ export default function SanmeigakuPage() {
         {/* Difference from Shichusuimei */}
         <section className="mb-20">
           <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#EAE4DC]" />
-            <span className="font-display italic text-[#C4926A] text-sm">vs. 四柱推命</span>
-            <div className="flex-1 h-px bg-[#EAE4DC]" />
+            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <span className="font-display italic text-[#B8AEED] text-sm">vs. 四柱推命</span>
+            <div className="flex-1 h-px bg-[#1A1F35]" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
-            <div className="bg-[#EFF0EB] p-8">
-              <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">算命学</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
+            <div className="bg-[#0E1020] p-8">
+              <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-2 uppercase">算命学</p>
               <h3 className="font-display text-2xl font-light mb-4">Sanmeigaku</h3>
               <ul className="space-y-2">
                 {[
@@ -97,15 +97,15 @@ export default function SanmeigakuPage() {
                   "位相法による人間関係の読み",
                   "日本で体系化・発展",
                 ].map((item) => (
-                  <li key={item} className="flex gap-2 items-start text-xs text-[#8A7E75] tracking-wider">
-                    <span className="text-[#8B5E3C] mt-0.5">—</span>
+                  <li key={item} className="flex gap-2 items-start text-xs text-[#8888AA] tracking-wider">
+                    <span className="text-[#8B7FCC] mt-0.5">—</span>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-[#EFF0EB] p-8">
-              <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-2 uppercase">四柱推命</p>
+            <div className="bg-[#0E1020] p-8">
+              <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-2 uppercase">四柱推命</p>
               <h3 className="font-display text-2xl font-light mb-4">Four Pillars</h3>
               <ul className="space-y-2">
                 {[
@@ -115,8 +115,8 @@ export default function SanmeigakuPage() {
                   "大運・流年の時間軸を重視",
                   "中国から直接継承・日本でも普及",
                 ].map((item) => (
-                  <li key={item} className="flex gap-2 items-start text-xs text-[#8A7E75] tracking-wider">
-                    <span className="text-[#8B5E3C] mt-0.5">—</span>
+                  <li key={item} className="flex gap-2 items-start text-xs text-[#8888AA] tracking-wider">
+                    <span className="text-[#8B7FCC] mt-0.5">—</span>
                     {item}
                   </li>
                 ))}
@@ -128,23 +128,23 @@ export default function SanmeigakuPage() {
         {/* Ten stars */}
         <section>
           <h2 className="font-display text-4xl font-light mb-2">10の宿命星</h2>
-          <p className="text-sm text-[#8A7E75] mb-10 tracking-wider">
+          <p className="text-sm text-[#8888AA] mb-10 tracking-wider">
             算命学では命式から10の宿命星を導く。この星の組み合わせと配置が、その人の気質・才能・人生のパターンを示す。
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
             {tenGods.map((god) => (
-              <div key={god.name} className="bg-[#EFF0EB] p-8">
+              <div key={god.name} className="bg-[#0E1020] p-8">
                 <h3 className="font-display text-2xl font-light mb-1">{god.name}</h3>
-                <p className="text-xs text-[#8B5E3C] tracking-wider mb-3">{god.keyword}</p>
-                <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{god.desc}</p>
+                <p className="text-xs text-[#8B7FCC] tracking-wider mb-3">{god.keyword}</p>
+                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{god.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Note */}
-          <div className="mt-12 border border-[#D6C5B0] p-8">
-            <p className="text-xs tracking-[0.2em] text-[#8B5E3C] mb-3 uppercase">Note — 守護神について</p>
-            <p className="text-sm text-[#3D3630] leading-loose tracking-wider">
+          <div className="mt-12 border border-[#2A2F52] p-8">
+            <p className="text-xs tracking-[0.2em] text-[#8B7FCC] mb-3 uppercase">Note — 守護神について</p>
+            <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">
               算命学の守護神とは、命式の五行バランスを整えるために必要な五行の「神」のこと。
               たとえば木のエネルギーが過剰な命式には、それを適度に剋する（切る）「金」が守護神になる場合がある。
               守護神を意識した環境・色・方角・仕事の選択が、命式の調和につながると考える。

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PlanetVisual from "@/components/PlanetVisual";
 
 export const metadata: Metadata = {
   title: "惑星の意味 | 西洋占星術",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 const planets = [
   {
     symbol: "☉",
+    visual: "sun" as const,
     name: "太陽",
     en: "Sun",
     keyword: "自己・意志・輝き",
@@ -18,6 +20,7 @@ const planets = [
   },
   {
     symbol: "☽",
+    visual: "moon" as const,
     name: "月",
     en: "Moon",
     keyword: "感情・本能・安心の場所",
@@ -27,6 +30,7 @@ const planets = [
   },
   {
     symbol: "☿",
+    visual: "mercury" as const,
     name: "水星",
     en: "Mercury",
     keyword: "思考・言語・コミュニケーション",
@@ -36,6 +40,7 @@ const planets = [
   },
   {
     symbol: "♀",
+    visual: "venus" as const,
     name: "金星",
     en: "Venus",
     keyword: "愛・美・価値観",
@@ -45,6 +50,7 @@ const planets = [
   },
   {
     symbol: "♂",
+    visual: "mars" as const,
     name: "火星",
     en: "Mars",
     keyword: "行動・情熱・エネルギー",
@@ -54,6 +60,7 @@ const planets = [
   },
   {
     symbol: "♃",
+    visual: "jupiter" as const,
     name: "木星",
     en: "Jupiter",
     keyword: "拡大・幸運・哲学",
@@ -63,6 +70,7 @@ const planets = [
   },
   {
     symbol: "♄",
+    visual: "saturn" as const,
     name: "土星",
     en: "Saturn",
     keyword: "制限・規律・成熟",
@@ -72,6 +80,7 @@ const planets = [
   },
   {
     symbol: "♅",
+    visual: "uranus" as const,
     name: "天王星",
     en: "Uranus",
     keyword: "革新・自由・突破",
@@ -81,6 +90,7 @@ const planets = [
   },
   {
     symbol: "♆",
+    visual: "neptune" as const,
     name: "海王星",
     en: "Neptune",
     keyword: "夢想・直感・霊性",
@@ -90,6 +100,7 @@ const planets = [
   },
   {
     symbol: "♇",
+    visual: "pluto" as const,
     name: "冥王星",
     en: "Pluto",
     keyword: "変容・死と再生・権力",
@@ -102,17 +113,17 @@ const planets = [
 export default function PlanetsPage() {
   return (
     <>
-      <div className="border-b border-[#EAE4DC]">
+      <div className="border-b border-[#1A1F35]">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex items-center gap-2 text-xs text-[#8A7E75] tracking-wider mb-4">
-            <Link href="/astrology" className="hover:text-[#8B5E3C] transition-colors">西洋占星術</Link>
+          <div className="flex items-center gap-2 text-xs text-[#8888AA] tracking-wider mb-4">
+            <Link href="/astrology" className="hover:text-[#8B7FCC] transition-colors">西洋占星術</Link>
             <span>/</span>
             <span>惑星の意味</span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-light text-[#1A1714] mb-4">
+          <h1 className="font-display text-5xl md:text-6xl font-light text-[#E8E5F5] mb-4">
             惑星の意味
           </h1>
-          <p className="text-sm text-[#3D3630] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
             西洋占星術では10の惑星（天体）を使う。それぞれが人間の心理・欲求・テーマを象徴し、
             「何を（惑星）」「どのように（星座）」「どの領域で（ハウス）」という三層の文法で読み解く。
           </p>
@@ -120,24 +131,26 @@ export default function PlanetsPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="space-y-px bg-[#EAE4DC]">
+        <div className="space-y-px bg-[#1A1F35]">
           {planets.map((planet) => (
-            <div key={planet.name} className="bg-[#EFF0EB] p-8 md:p-10">
-              <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8">
-                {/* Symbol + name */}
-                <div className="text-center md:text-left">
-                  <p className="font-display text-6xl text-[#C4926A] leading-none mb-2">{planet.symbol}</p>
-                  <p className="text-xs tracking-[0.2em] text-[#8A7E75] uppercase mb-1">{planet.en}</p>
-                  <h2 className="font-display text-2xl font-light">{planet.name}</h2>
-                  <p className="text-xs text-[#D6C5B0] mt-2 tracking-wider">{planet.period}</p>
+            <div key={planet.name} className="bg-[#0E1020] p-8 md:p-10">
+              <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8">
+                {/* Planet visual + name */}
+                <div className="flex flex-col items-center md:items-start gap-3">
+                  <PlanetVisual planet={planet.visual} size={72} />
+                  <div>
+                    <p className="text-xs tracking-[0.2em] text-[#8888AA] uppercase mb-0.5">{planet.en}</p>
+                    <h2 className="font-display text-2xl font-light">{planet.name}</h2>
+                    <p className="text-xs text-[#303860] mt-1 tracking-wider">{planet.period}</p>
+                  </div>
                 </div>
                 {/* Content */}
                 <div>
-                  <p className="text-xs tracking-[0.15em] text-[#8B5E3C] mb-3">{planet.keyword}</p>
-                  <p className="text-sm text-[#3D3630] leading-loose tracking-wider mb-4">{planet.desc}</p>
-                  <div className="border-l-2 border-[#EAE4DC] pl-4">
-                    <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-1 uppercase">Career Lens</p>
-                    <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{planet.career}</p>
+                  <p className="text-xs tracking-[0.15em] text-[#8B7FCC] mb-3">{planet.keyword}</p>
+                  <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">{planet.desc}</p>
+                  <div className="border-l-2 border-[#1A1F35] pl-4">
+                    <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-1 uppercase">Career Lens</p>
+                    <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{planet.career}</p>
                   </div>
                 </div>
               </div>

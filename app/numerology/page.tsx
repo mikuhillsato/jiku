@@ -23,20 +23,20 @@ const lifePathMeanings = [
 
 function HowToCalculate() {
   return (
-    <div className="bg-[#1A1714] text-[#EFF0EB] p-8 md:p-12">
-      <p className="text-xs tracking-[0.2em] text-[#C4926A] mb-4 uppercase">How to Calculate</p>
+    <div className="bg-[#0D1028] text-[#E8E5F5] p-8 md:p-12">
+      <p className="text-xs tracking-[0.2em] text-[#B8AEED] mb-4 uppercase">How to Calculate</p>
       <h3 className="font-display text-3xl font-light mb-6">ライフパスナンバーの計算法</h3>
-      <p className="text-sm text-[#8A7E75] leading-loose tracking-wider mb-8">
+      <p className="text-sm text-[#8888AA] leading-loose tracking-wider mb-8">
         生年月日のすべての数字を足し合わせ、1桁（または11・22・33）になるまで繰り返す。
       </p>
-      <div className="bg-[#111] p-6 font-mono text-sm text-[#C4926A] leading-loose">
-        <p className="text-[#8A7E75] text-xs mb-2">例：1990年3月15日生まれの場合</p>
+      <div className="bg-[#040509] p-6 font-mono text-sm text-[#B8AEED] leading-loose">
+        <p className="text-[#8888AA] text-xs mb-2">例：1990年3月15日生まれの場合</p>
         <p>1 + 9 + 9 + 0 + 0 + 3 + 1 + 5 = 28</p>
-        <p>2 + 8 = <span className="text-[#EFF0EB] font-bold">10</span></p>
-        <p>1 + 0 = <span className="text-[#EFF0EB] font-bold">1</span></p>
-        <p className="mt-4 text-[#EFF0EB]">→ ライフパスナンバーは <span className="text-[#C4926A]">1</span></p>
+        <p>2 + 8 = <span className="text-[#E8E5F5] font-bold">10</span></p>
+        <p>1 + 0 = <span className="text-[#E8E5F5] font-bold">1</span></p>
+        <p className="mt-4 text-[#E8E5F5]">→ ライフパスナンバーは <span className="text-[#B8AEED]">1</span></p>
       </div>
-      <p className="text-xs text-[#8A7E75] tracking-wider mt-4">
+      <p className="text-xs text-[#8888AA] tracking-wider mt-4">
         ※ 途中で11・22・33が出た場合はそのまま保持する（マスターナンバー）
       </p>
     </div>
@@ -46,13 +46,13 @@ function HowToCalculate() {
 export default function NumerologyPage() {
   return (
     <>
-      <div className="border-b border-[#EAE4DC]">
+      <div className="border-b border-[#1A1F35]">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="text-xs tracking-[0.3em] text-[#8A7E75] mb-4 uppercase">03 — Numerology</p>
-          <h1 className="font-display text-5xl md:text-7xl font-light text-[#1A1714] mb-6">
+          <p className="text-xs tracking-[0.3em] text-[#8888AA] mb-4 uppercase">03 — Numerology</p>
+          <h1 className="font-display text-5xl md:text-7xl font-light text-[#E8E5F5] mb-6">
             数秘術
           </h1>
-          <p className="text-sm text-[#3D3630] leading-loose tracking-wider max-w-lg">
+          <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider max-w-lg">
             ピタゴラスに遡る数の哲学をルーツに持つ、数秘術（ニューメロロジー）。
             生年月日と名前を数字に還元することで、人生のテーマ・使命・魂の欲求を読み解く。
             シンプルな計算の先に、驚くほど核心を突く自己像が浮かび上がる。
@@ -65,14 +65,14 @@ export default function NumerologyPage() {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-display italic text-[#C4926A] text-lg mb-4">overview</p>
+              <p className="font-display italic text-[#B8AEED] text-lg mb-4">overview</p>
               <h2 className="font-display text-4xl font-light mb-6">数秘術とは</h2>
-              <p className="text-sm text-[#3D3630] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
                 数秘術（すうひじゅつ）は、「数字には固有の振動数と意味がある」という哲学に基づく。
                 生年月日の各数字を足して一桁（または特定の二桁）に還元することで、
                 「ライフパスナンバー」と呼ばれる最重要数が導き出される。
               </p>
-              <p className="text-sm text-[#3D3630] leading-loose tracking-wider mb-4">
+              <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider mb-4">
                 ライフパスナンバー以外にも、「名前から導く魂の数字（ソウルナンバー）」
                 「外側への表現（パーソナリティナンバー）」「人生全体の使命（デスティニーナンバー）」など、
                 複数の数字を組み合わせてより立体的な自己像を描くことができる。
@@ -87,12 +87,12 @@ export default function NumerologyPage() {
         {/* Key numbers */}
         <section className="mb-20">
           <div className="flex items-center gap-6 mb-10">
-            <div className="flex-1 h-px bg-[#EAE4DC]" />
-            <span className="font-display italic text-[#C4926A] text-sm">core numbers</span>
-            <div className="flex-1 h-px bg-[#EAE4DC]" />
+            <div className="flex-1 h-px bg-[#1A1F35]" />
+            <span className="font-display italic text-[#B8AEED] text-sm">core numbers</span>
+            <div className="flex-1 h-px bg-[#1A1F35]" />
           </div>
           <h2 className="font-display text-4xl font-light mb-10 text-center">主要な数字の種類</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAE4DC]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1A1F35]">
             {[
               {
                 name: "ライフパスナンバー",
@@ -119,11 +119,11 @@ export default function NumerologyPage() {
                 desc: "名前の子音から計算し、他者があなたを「どう見るか・どう感じるか」という外側への印象を示す。ライフパスナンバーとの違いがペルソナの厚みを教えてくれる。",
               },
             ].map((item) => (
-              <div key={item.name} className="bg-[#EFF0EB] p-8">
-                <p className="text-xs tracking-[0.2em] text-[#8A7E75] mb-1 uppercase">{item.en}</p>
+              <div key={item.name} className="bg-[#0E1020] p-8">
+                <p className="text-xs tracking-[0.2em] text-[#8888AA] mb-1 uppercase">{item.en}</p>
                 <h3 className="font-display text-2xl font-light mb-2">{item.name}</h3>
-                <p className="text-xs text-[#8B5E3C] tracking-wider mb-4">導出元：{item.source}</p>
-                <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{item.desc}</p>
+                <p className="text-xs text-[#8B7FCC] tracking-wider mb-4">導出元：{item.source}</p>
+                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -132,15 +132,15 @@ export default function NumerologyPage() {
         {/* Life path numbers */}
         <section>
           <h2 className="font-display text-4xl font-light mb-2">ライフパスナンバーの意味</h2>
-          <p className="text-sm text-[#8A7E75] mb-10 tracking-wider">1〜9、そしてマスターナンバー11・22・33</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EAE4DC]">
+          <p className="text-sm text-[#8888AA] mb-10 tracking-wider">1〜9、そしてマスターナンバー11・22・33</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1A1F35]">
             {lifePathMeanings.map((item) => (
-              <div key={item.number} className="bg-[#EFF0EB] p-8">
-                <p className="font-display text-6xl text-[#D6C5B0] font-light mb-3 leading-none">
+              <div key={item.number} className="bg-[#0E1020] p-8">
+                <p className="font-display text-6xl text-[#303860] font-light mb-3 leading-none">
                   {item.number}
                 </p>
-                <p className="text-xs text-[#8B5E3C] tracking-wider mb-3">{item.keyword}</p>
-                <p className="text-sm text-[#3D3630] leading-loose tracking-wider">{item.desc}</p>
+                <p className="text-xs text-[#8B7FCC] tracking-wider mb-3">{item.keyword}</p>
+                <p className="text-sm text-[#C0BDD4] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
           </div>

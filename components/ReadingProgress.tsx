@@ -22,7 +22,7 @@ export default function ReadingProgress() {
       {/* Bar line — scaleX is GPU-accelerated */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-transparent origin-left">
         <div
-          className="h-full w-full bg-gradient-to-r from-[#8B5E3C] via-[#C4926A] to-[#C4926A] origin-left"
+          className="h-full w-full bg-gradient-to-r from-[#8B7FCC] via-[#B8AEED] to-[#B8AEED] origin-left"
           style={{
             transform: `scaleX(${progress / 100})`,
             willChange: "transform",
