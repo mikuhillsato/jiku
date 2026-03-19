@@ -39,7 +39,7 @@ export default function Navigation() {
           href="/"
           className="font-display text-2xl tracking-[0.2em] text-[#E8E5F5] hover:text-[#8B7FCC] transition-colors"
         >
-          SEIUN
+          MyJiku
         </Link>
 
         {/* Desktop nav */}

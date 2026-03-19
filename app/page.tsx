@@ -48,6 +48,9 @@ export default function Home() {
           <p className="text-xs tracking-[0.3em] text-[#8888AA] mb-6 uppercase">
             Self-knowledge × Divination
           </p>
+          <p className="font-display italic text-[#8B7FCC] text-xl mb-4 tracking-wide">
+            占いは、当てるものじゃない。知るためのものだ。
+          </p>
           <h1 className="font-display text-6xl md:text-8xl font-light leading-none tracking-tight text-[#E8E5F5] mb-8">
             星と命式が、<br />
             <em className="not-italic text-[#8B7FCC]">羅針盤</em>になる。
