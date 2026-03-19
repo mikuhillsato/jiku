@@ -30,7 +30,7 @@ export default function SanmeigakuPage() {
           </span>
         </div>
         <div className="px-4 md:px-12 py-8 md:py-16">
-          <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">04 — Sanmeigaku</p>
+          <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">05 — Sanmeigaku</p>
           <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
             算命学
           </h1>

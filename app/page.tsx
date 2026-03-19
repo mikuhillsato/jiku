@@ -30,6 +30,25 @@ const systems = [
   },
   {
     number: "02",
+    title: "数秘術",
+    titleEn: "Numerology",
+    href: "/numerology",
+    description: "生年月日と名前を数字に還元し、あなたの人生のテーマと使命を読み解く。シンプルな数字の中に、驚くほど精緻な自己像が浮かび上がる。",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 opacity-50">
+        <circle cx="32" cy="32" r="22" stroke="#111" strokeWidth="0.8"/>
+        <text x="32" y="38" textAnchor="middle" fontSize="20" fill="#111" fontFamily="Georgia,serif" fontStyle="italic">1</text>
+        <circle cx="32" cy="10" r="2" fill="#111"/>
+        <circle cx="32" cy="54" r="2" fill="#111"/>
+        <circle cx="10" cy="32" r="2" fill="#111"/>
+        <circle cx="54" cy="32" r="2" fill="#111"/>
+        <circle cx="14" cy="14" r="1.5" fill="#CCC"/>
+        <circle cx="50" cy="50" r="1.5" fill="#CCC"/>
+      </svg>
+    ),
+  },
+  {
+    number: "03",
     title: "四柱推命",
     titleEn: "Four Pillars of Destiny",
     href: "/shichusuimei",
@@ -49,26 +68,28 @@ const systems = [
     ),
   },
   {
-    number: "03",
-    title: "数秘術",
-    titleEn: "Numerology",
-    href: "/numerology",
-    description: "生年月日と名前を数字に還元し、あなたの人生のテーマと使命を読み解く。シンプルな数字の中に、驚くほど精緻な自己像が浮かび上がる。",
+    number: "04",
+    title: "九星気学",
+    titleEn: "Nine Star Ki",
+    href: "/kyusei",
+    description: "古代中国の洛書をルーツに持つ九星気学。9つの星が示す才能・適職・気質から、あなたが最大の力を発揮できる環境と役割を読み解く。",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 opacity-50">
-        <circle cx="32" cy="32" r="22" stroke="#111" strokeWidth="0.8"/>
-        <text x="32" y="38" textAnchor="middle" fontSize="20" fill="#111" fontFamily="Georgia,serif" fontStyle="italic">1</text>
-        <circle cx="32" cy="10" r="2" fill="#111"/>
-        <circle cx="32" cy="54" r="2" fill="#111"/>
-        <circle cx="10" cy="32" r="2" fill="#111"/>
-        <circle cx="54" cy="32" r="2" fill="#111"/>
-        <circle cx="14" cy="14" r="1.5" fill="#CCC"/>
-        <circle cx="50" cy="50" r="1.5" fill="#CCC"/>
+        <rect x="8" y="8" width="48" height="48" stroke="#111" strokeWidth="0.8"/>
+        <line x1="24" y1="8" x2="24" y2="56" stroke="#111" strokeWidth="0.5"/>
+        <line x1="40" y1="8" x2="40" y2="56" stroke="#111" strokeWidth="0.5"/>
+        <line x1="8" y1="24" x2="56" y2="24" stroke="#111" strokeWidth="0.5"/>
+        <line x1="8" y1="40" x2="56" y2="40" stroke="#111" strokeWidth="0.5"/>
+        <circle cx="32" cy="32" r="4" fill="#111"/>
+        <circle cx="16" cy="16" r="1.5" fill="#888"/>
+        <circle cx="48" cy="16" r="1.5" fill="#888"/>
+        <circle cx="16" cy="48" r="1.5" fill="#888"/>
+        <circle cx="48" cy="48" r="1.5" fill="#888"/>
       </svg>
     ),
   },
   {
-    number: "04",
+    number: "05",
     title: "算命学",
     titleEn: "Sanmeigaku",
     href: "/sanmeigaku",
