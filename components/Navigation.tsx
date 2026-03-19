@@ -25,6 +25,7 @@ const nav = [
   { label: "数秘術", href: "/numerology", sub: [] },
   { label: "九星気学", href: "/kyusei", sub: [] },
   { label: "算命学", href: "/sanmeigaku", sub: [] },
+  { label: "統合鑑定", href: "/diagnosis", sub: [] },
   { label: "About", href: "/about", sub: [] },
 ];
 
