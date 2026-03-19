@@ -140,17 +140,16 @@ export default function ShichusuimeiPage() {
               <Link
                 key={page.href}
                 href={page.href}
-                className="group grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0"
-                style={{ gridTemplateColumns: "72px 220px 1fr" }}
+                className="group flex flex-col md:grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0 md:grid-cols-[72px_220px_1fr]"
               >
-                <div className="border-r border-[#E8E8E4] flex items-start pt-6 pl-5">
+                <div className="hidden md:flex border-r border-[#E8E8E4] items-start pt-6 pl-5">
                   <span className="font-display text-[12px] tracking-[0.15em] text-[#CCC]">0{i + 1} —</span>
                 </div>
-                <div className="border-r border-[#E8E8E4] flex flex-col justify-center px-6 py-6">
+                <div className="md:border-r border-[#E8E8E4] flex flex-col justify-center px-5 md:px-6 py-4 md:py-6">
                   <p className="text-[8px] tracking-[0.35em] uppercase text-[#AAA] mb-1">{page.titleEn}</p>
                   <h3 className="font-display text-[20px] font-light group-hover:opacity-60 transition-opacity">{page.title} <span className="text-[#888]">→</span></h3>
                 </div>
-                <div className="flex items-center px-8 py-6">
+                <div className="flex items-center px-5 md:px-8 pb-4 pt-0 md:py-6">
                   <p className="text-[11px] leading-loose tracking-wider text-[#666666]">{page.desc}</p>
                 </div>
               </Link>

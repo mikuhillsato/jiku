@@ -91,7 +91,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr 320px" }}>
+      <div className="grid border-b border-[#111111] grid-cols-[52px_1fr] md:grid-cols-[52px_1fr_320px]">
         {/* 縦ラベル */}
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{
@@ -108,19 +108,19 @@ export default function Home() {
         </div>
 
         {/* 本文 */}
-        <div className="px-12 py-16 border-r border-[#111111] flex flex-col justify-between min-h-[480px]">
+        <div className="px-6 md:px-12 py-10 md:py-16 md:border-r border-[#111111] flex flex-col justify-between min-h-[380px] md:min-h-[480px]">
           <div>
             <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-7">
               占いは、当てるものじゃない。知るためのものだ。
             </p>
-            <h1 className="font-display font-light leading-[0.93] tracking-tight mb-11" style={{ fontSize: "clamp(56px,7vw,84px)" }}>
+            <h1 className="font-display font-light leading-[0.93] tracking-tight mb-11" style={{ fontSize: "clamp(44px,7vw,84px)" }}>
               星と<br />
               命式が、<br />
               <em className="not-italic font-light italic">羅針盤</em><br />
               になる。
             </h1>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center flex-wrap gap-2">
             <Link
               href="/astrology"
               className="text-[9px] tracking-[0.3em] uppercase px-7 py-3 bg-[#111111] text-[#F9F9F7] hover:bg-[#333333] transition-colors"
@@ -137,8 +137,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ホロスコープチャート */}
-        <div className="flex items-center justify-center p-10 bg-[#F9F9F7]">
+        {/* ホロスコープチャート - hidden on mobile */}
+        <div className="hidden md:flex items-center justify-center p-10 bg-[#F9F9F7]">
           <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[220px] h-[220px]">
             <circle cx="120" cy="120" r="108" stroke="#111" strokeWidth="0.8"/>
             <circle cx="120" cy="120" r="82"  stroke="#111" strokeWidth="0.5"/>
@@ -182,24 +182,23 @@ export default function Home() {
           <Link
             key={s.href}
             href={s.href}
-            className="group grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0"
-            style={{ gridTemplateColumns: "120px 72px 220px 1fr" }}
+            className="group flex flex-col md:grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0 md:grid-cols-[120px_72px_220px_1fr]"
           >
             {/* サムネイル */}
-            <div className="border-r border-[#E8E8E4] flex items-center justify-center h-24 bg-[#F4F4F2]">
+            <div className="border-b md:border-b-0 md:border-r border-[#E8E8E4] flex items-center justify-center h-20 md:h-24 bg-[#F4F4F2]">
               {s.icon}
             </div>
-            {/* 番号 */}
-            <div className="border-r border-[#E8E8E4] flex items-start pt-7 pl-5">
+            {/* 番号 - hidden on mobile */}
+            <div className="hidden md:flex border-r border-[#E8E8E4] items-start pt-7 pl-5">
               <span className="font-display text-[12px] tracking-[0.15em] text-[#CCC]">{s.number} —</span>
             </div>
             {/* タイトル */}
-            <div className="border-r border-[#E8E8E4] flex flex-col justify-center px-6">
+            <div className="md:border-r border-[#E8E8E4] flex flex-col justify-center px-5 md:px-6 py-3 md:py-0">
               <p className="text-[8px] tracking-[0.35em] uppercase text-[#AAA] mb-1">{s.titleEn}</p>
-              <h2 className="font-display text-[22px] font-light group-hover:opacity-60 transition-opacity">{s.title}</h2>
+              <h2 className="font-display text-[20px] md:text-[22px] font-light group-hover:opacity-60 transition-opacity">{s.title}</h2>
             </div>
             {/* 説明 */}
-            <div className="flex items-center px-8 py-7">
+            <div className="flex items-start md:items-center px-5 md:px-8 pb-4 pt-0 md:py-7">
               <p className="text-[11px] leading-loose tracking-wider text-[#666666]">{s.description}</p>
             </div>
           </Link>
@@ -208,21 +207,21 @@ export default function Home() {
 
       {/* PHILOSOPHY */}
       <section
-        className="grid py-16 px-12"
-        style={{ backgroundColor: "#111111", gridTemplateColumns: "80px 1fr 1fr", gap: "0 40px", alignItems: "start" }}
+        className="py-10 px-6 md:py-16 md:px-12 flex flex-col gap-6 md:grid md:gap-x-10 md:items-start md:grid-cols-[80px_1fr_1fr]"
+        style={{ backgroundColor: "#111111" }}
       >
-        <div className="font-display text-[120px] leading-[0.7] italic" style={{ color: "#2A2A2A" }}>&ldquo;</div>
+        <div className="hidden md:block font-display text-[120px] leading-[0.7] italic" style={{ color: "#2A2A2A" }}>&ldquo;</div>
         <div>
           <p className="text-[8px] tracking-[0.5em] uppercase mb-5 flex items-center gap-3" style={{ color: "#555" }}>
             Philosophy
             <span className="flex-1 h-px" style={{ background: "#2A2A2A" }} />
           </p>
-          <p className="font-display text-[30px] font-light italic leading-relaxed" style={{ color: "#F9F9F7" }}>
+          <p className="font-display text-[26px] md:text-[30px] font-light italic leading-relaxed" style={{ color: "#F9F9F7" }}>
             「知ること」は、<br />
             「選ぶこと」の始まり。
           </p>
         </div>
-        <div className="pt-8">
+        <div className="md:pt-8">
           <p className="text-[11px] leading-[2.2] tracking-wider mb-6" style={{ color: "#666" }}>
             自分の先天的な資質を知れば、強みを活かした選択ができる。人生の流れを読めば、焦らず自分のタイミングで動ける。占術は、自分の人生を自分で設計するための地図だ。
           </p>
