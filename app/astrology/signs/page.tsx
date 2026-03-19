@@ -159,7 +159,7 @@ export default function SignsPage() {
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Element legend */}
-        <div className="flex gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12">
           {[
             { el: "火", en: "Fire",  signs: "牡羊・獅子・射手" },
             { el: "地", en: "Earth", signs: "牡牛・乙女・山羊" },
@@ -167,7 +167,7 @@ export default function SignsPage() {
             { el: "水", en: "Water", signs: "蟹・蠍・魚" },
           ].map(e => (
             <div key={e.el} className="flex items-center gap-3">
-              <div className="w-px h-8 bg-[#111111]" />
+              <div className="w-px h-8 bg-[#111111] shrink-0" />
               <div>
                 <p className="font-display text-lg font-light text-[#111111]">{e.el} <span className="text-[#888888] text-sm">{e.en}</span></p>
                 <p className="text-[9px] tracking-wider text-[#888888]">{e.signs}</p>
@@ -196,12 +196,42 @@ export default function SignsPage() {
         </div>
 
         {/* Footer note */}
-        <div className="mt-12 border-t border-[#E0DDD6] pt-8">
+        <div className="mt-12 border-t border-[#E0DDD6] pt-8 mb-20">
           <p className="text-xs text-[#888888] tracking-wider leading-loose">
             ※ 太陽星座の期間は年によって1日前後する場合があります。境界付近の生まれの方は出生時刻と正確な天体暦で確認してください。
             また、太陽星座はあなたの多面的な性質のひとつに過ぎません。月星座・アセンダントと合わせて読むことで、より立体的な自己像が浮かび上がります。
           </p>
         </div>
+
+        {/* Related pages */}
+        <section>
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+          </div>
+          {[
+            { href: "/astrology/planets", title: "惑星の意味", titleEn: "Planets", desc: "太陽・月・水星・金星・火星・木星・土星・天王星・海王星・冥王星。10天体それぞれが象徴するテーマと、あなたのチャートでの読み方。" },
+            { href: "/astrology/houses",  title: "ハウスの意味", titleEn: "Houses",  desc: "第1室から第12室まで、人生の12の領域。仕事・お金・人間関係・精神性——それぞれのハウスに惑星が入ることの意味。" },
+            { href: "/astrology",         title: "西洋占星術 トップ", titleEn: "Western Astrology", desc: "ホロスコープの基礎から惑星・星座・ハウスの三層構造まで。西洋占星術の全体像を把握する。" },
+          ].map((page, i) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className="group flex flex-col md:grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0 md:grid-cols-[72px_220px_1fr]"
+            >
+              <div className="hidden md:flex border-r border-[#E8E8E4] items-start pt-6 pl-5">
+                <span className="font-display text-[12px] tracking-[0.15em] text-[#CCC]">0{i + 1} —</span>
+              </div>
+              <div className="md:border-r border-[#E8E8E4] flex flex-col justify-center px-5 md:px-6 py-4 md:py-6">
+                <p className="text-[8px] tracking-[0.35em] uppercase text-[#AAA] mb-1">{page.titleEn}</p>
+                <h3 className="font-display text-[20px] font-light group-hover:opacity-60 transition-opacity">{page.title} <span className="text-[#888]">→</span></h3>
+              </div>
+              <div className="flex items-center px-5 md:px-8 pb-4 pt-0 md:py-6">
+                <p className="text-[11px] leading-loose tracking-wider text-[#666666]">{page.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </section>
       </div>
     </>
   );

@@ -11,6 +11,7 @@ const nav = [
     sub: [
       { label: "惑星の意味", href: "/astrology/planets" },
       { label: "ハウスの意味", href: "/astrology/houses" },
+      { label: "12星座の意味", href: "/astrology/signs" },
     ],
   },
   {

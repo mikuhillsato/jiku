@@ -136,6 +136,36 @@ export default function HousesPage() {
             </div>
           ))}
         </div>
+
+        {/* Related pages */}
+        <section className="mt-20">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+          </div>
+          {[
+            { href: "/astrology/planets", title: "惑星の意味",    titleEn: "Planets", desc: "太陽・月・水星・金星・火星・木星・土星・天王星・海王星・冥王星。10天体それぞれが象徴するテーマと、あなたのチャートでの読み方。" },
+            { href: "/astrology/signs",   title: "12星座の意味", titleEn: "Signs",   desc: "牡羊座から魚座まで、12星座それぞれの気質・テーマ・エレメントを解説。太陽星座を軸に、あなたの本質を読み解く入口。" },
+            { href: "/astrology",         title: "西洋占星術 トップ", titleEn: "Western Astrology", desc: "ホロスコープの基礎から惑星・星座・ハウスの三層構造まで。西洋占星術の全体像を把握する。" },
+          ].map((page, i) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className="group flex flex-col md:grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0 md:grid-cols-[72px_220px_1fr]"
+            >
+              <div className="hidden md:flex border-r border-[#E8E8E4] items-start pt-6 pl-5">
+                <span className="font-display text-[12px] tracking-[0.15em] text-[#CCC]">0{i + 1} —</span>
+              </div>
+              <div className="md:border-r border-[#E8E8E4] flex flex-col justify-center px-5 md:px-6 py-4 md:py-6">
+                <p className="text-[8px] tracking-[0.35em] uppercase text-[#AAA] mb-1">{page.titleEn}</p>
+                <h3 className="font-display text-[20px] font-light group-hover:opacity-60 transition-opacity">{page.title} <span className="text-[#888]">→</span></h3>
+              </div>
+              <div className="flex items-center px-5 md:px-8 pb-4 pt-0 md:py-6">
+                <p className="text-[11px] leading-loose tracking-wider text-[#666666]">{page.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </section>
       </div>
     </>
   );
